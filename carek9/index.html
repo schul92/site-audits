@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareK9 — Website Audit &amp; SEO/GEO Report</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #0b0f19;
+            --surface: #131829;
+            --surface2: #1a2035;
+            --border: #232a3f;
+            --text: #c9d1e3;
+            --text-muted: #6b7a99;
+            --heading: #e8ecf4;
+            --accent: #d97706;
+            --accent-light: #fbbf24;
+            --green: #34d399;
+            --green-dim: rgba(52, 211, 153, 0.12);
+            --red: #f87171;
+            --red-dim: rgba(248, 113, 113, 0.12);
+            --amber: #fbbf24;
+            --amber-dim: rgba(251, 191, 36, 0.12);
+            --blue: #60a5fa;
+            --blue-dim: rgba(96, 165, 250, 0.12);
+            --pink: #f472b6;
+            --radius: 12px;
+            --radius-sm: 8px;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 15px;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4 { color: var(--heading); font-weight: 700; line-height: 1.3; }
+        h2 { font-size: 1.5rem; margin-top: 3rem; }
+        h3 { font-size: 1.15rem; margin-top: 1.5rem; color: var(--accent-light); }
+        p { margin-top: 0.75rem; }
+        a { color: var(--accent-light); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: #fcd34d; }
+        strong { color: var(--heading); }
+        code {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            font-size: 0.85em;
+            background: var(--surface2);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--accent-light);
+        }
+        .wrapper { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+
+        /* Cover */
+        .cover {
+            position: relative;
+            padding: 4rem 0 3rem;
+            text-align: center;
+            overflow: hidden;
+        }
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: -120px; left: 50%; transform: translateX(-50%);
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(217,119,6,0.18) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--accent-light); }
+        .cover .badge {
+            display: inline-block;
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            padding: 6px 16px;
+            border-radius: 99px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .cover h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
+        .cover h1 span { color: var(--accent-light); }
+        .cover .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0.5rem auto 0;
+        }
+        .cover-meta {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* TOC */
+        .toc {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin: 2rem 0 3rem;
+        }
+        .toc h3 { margin-top: 0; color: var(--heading); font-size: 1rem; margin-bottom: 1rem; }
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 0.5rem;
+        }
+        .toc a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: var(--radius-sm);
+            color: var(--text);
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+        .toc a:hover { background: var(--surface2); color: var(--accent-light); }
+        .toc-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px; height: 26px;
+            border-radius: 6px;
+            background: var(--surface2);
+            color: var(--accent-light);
+            font-size: 0.75rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* Sections */
+        .section { margin: 3.5rem 0; }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .section-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px; height: 38px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent), #b45309);
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .section-header h2 { margin: 0; }
+
+        /* Cards */
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .card h4 { font-size: 0.95rem; margin-bottom: 0.75rem; }
+
+        /* Badges */
+        .badge-fail { display: inline-block; background: var(--red-dim); color: var(--red); padding: 3px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; }
+        .badge-warn { display: inline-block; background: var(--amber-dim); color: var(--amber); padding: 3px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; }
+        .badge-pass { display: inline-block; background: var(--green-dim); color: var(--green); padding: 3px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; }
+        .badge-info { display: inline-block; background: var(--blue-dim); color: var(--blue); padding: 3px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; }
+
+        /* Tables */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1rem 0;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+        table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+        thead { background: var(--surface2); }
+        th { text-align: left; padding: 12px 16px; color: var(--text-muted); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+        td { padding: 12px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: rgba(217, 119, 6, 0.04); }
+
+        /* Diagrams */
+        .diagram {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+        .diagram pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            font-size: 0.78rem;
+            line-height: 1.6;
+            color: var(--text);
+            white-space: pre;
+            margin: 0;
+        }
+
+        /* Score bars */
+        .score-row { display: flex; align-items: center; gap: 12px; margin: 0.5rem 0; }
+        .score-label { width: 160px; font-size: 0.85rem; flex-shrink: 0; color: var(--text-muted); }
+        .score-bar { flex: 1; height: 10px; background: var(--surface2); border-radius: 99px; overflow: hidden; }
+        .score-fill { height: 100%; border-radius: 99px; }
+        .score-val { width: 50px; text-align: right; font-size: 0.85rem; font-weight: 700; }
+
+        /* Stat boxes */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .stat-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.25rem;
+            text-align: center;
+        }
+        .stat-box .stat-value { font-size: 2rem; font-weight: 800; line-height: 1.2; }
+        .stat-box .stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+
+        /* Verdict */
+        .verdict {
+            background: linear-gradient(135deg, rgba(217,119,6,0.12), rgba(52,211,153,0.08));
+            border: 1px solid var(--accent);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .verdict h3 { color: var(--accent-light); font-size: 1.3rem; margin: 0 0 0.5rem; }
+
+        /* Checklist */
+        .checklist { list-style: none; margin: 1rem 0; }
+        .checklist li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+        .checklist li:last-child { border-bottom: none; }
+        .check-icon { width: 20px; height: 20px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.7rem; margin-top: 2px; }
+        .check-pass { background: var(--green-dim); color: var(--green); }
+        .check-empty { border: 2px solid var(--border); }
+
+        /* Timeline */
+        .timeline { position: relative; margin: 2rem 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+        .timeline-item { position: relative; margin-bottom: 2rem; }
+        .timeline-dot { position: absolute; left: -33px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+        .timeline-item h4 { font-size: 1rem; margin-bottom: 0.5rem; }
+        .timeline-item .timeline-meta { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.75rem; }
+
+        .stars { color: var(--amber); letter-spacing: 2px; }
+        .stars-dim { color: var(--border); letter-spacing: 2px; }
+
+        .footer { margin-top: 5rem; padding: 2rem 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.8rem; }
+
+        @media (max-width: 700px) {
+            .cover h1 { font-size: 1.8rem; }
+            .cover-meta { flex-direction: column; align-items: center; gap: 0.5rem; }
+            .card-grid { grid-template-columns: 1fr; }
+            .stat-grid { grid-template-columns: repeat(2, 1fr); }
+            .diagram pre { font-size: 0.65rem; }
+            .toc-grid { grid-template-columns: 1fr; }
+        }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .section { animation: fadeUp 0.5s ease both; }
+        [id] { scroll-margin-top: 2rem; }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="cover">
+    <div class="wrapper">
+        <a href="../" class="back-link">&larr; All Audits</a><br>
+        <div class="badge">Website Audit Report</div>
+        <h1>Care<span>K9</span></h1>
+        <p class="subtitle">SEO, GEO &amp; Performance Audit &mdash; Premium Dog Wellness E-Commerce</p>
+        <div class="cover-meta">
+            <span>&#128054; Premium Dog Products</span>
+            <span>&#128197; February 2026</span>
+            <span>&#127919; Founded 2020</span>
+        </div>
+    </div>
+</header>
+
+<main class="wrapper">
+
+<nav class="toc">
+    <h3>Table of Contents</h3>
+    <div class="toc-grid">
+        <a href="#s1"><span class="toc-num">1</span> Executive Summary</a>
+        <a href="#s2"><span class="toc-num">2</span> Technology Stack</a>
+        <a href="#s3"><span class="toc-num">3</span> SEO Audit</a>
+        <a href="#s4"><span class="toc-num">4</span> GEO / AI Search Readiness</a>
+        <a href="#s5"><span class="toc-num">5</span> Speed &amp; Performance</a>
+        <a href="#s6"><span class="toc-num">6</span> Content &amp; Conversion</a>
+        <a href="#s7"><span class="toc-num">7</span> Competitor Landscape</a>
+        <a href="#s8"><span class="toc-num">8</span> What's Working Well</a>
+        <a href="#s9"><span class="toc-num">9</span> Recommended App Stack</a>
+        <a href="#s10"><span class="toc-num">10</span> Action Plan</a>
+    </div>
+</nav>
+
+<!-- 1. EXECUTIVE SUMMARY -->
+<section class="section" id="s1">
+    <div class="section-header">
+        <span class="section-num">1</span>
+        <h2>Executive Summary</h2>
+    </div>
+    <p>CareK9 is a premium dog wellness brand founded in 2020, selling fresh-made treats, functional food toppers, paw care, and bath products. The site runs on <strong>Shopify (Dawn theme)</strong> &mdash; a solid platform choice. However, significant SEO and content gaps are limiting discoverability and growth.</p>
+    <p>Unlike many small e-commerce sites, CareK9 has some strong foundations: structured data is partially implemented, GA4 is active, and the robots.txt is <strong>AI-crawler friendly</strong>. The biggest opportunities are in content marketing, keyword optimization, and scaling the product catalog.</p>
+
+    <div class="stat-grid">
+        <div class="stat-box">
+            <div class="stat-value" style="color: var(--amber);">C+</div>
+            <div class="stat-label">Current SEO Grade</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-value" style="color: var(--green);">4</div>
+            <div class="stat-label">Schema Types Present</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-value" style="color: var(--green);">GA4</div>
+            <div class="stat-label">Analytics Active</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-value" style="color: var(--amber);">16</div>
+            <div class="stat-label">Total Products</div>
+        </div>
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th>Category</th><th>Current State</th><th>Industry Standard</th></tr></thead>
+            <tbody>
+                <tr><td>Platform</td><td><span class="badge-pass">Shopify (Dawn)</span></td><td><span class="badge-pass">Shopify / WooCommerce</span></td></tr>
+                <tr><td>SEO Score</td><td><span class="badge-warn">C+</span></td><td><span class="badge-pass">B+ or higher</span></td></tr>
+                <tr><td>GEO Readiness</td><td><span class="badge-warn">Partial (4 schemas)</span></td><td><span class="badge-pass">Full schema coverage</span></td></tr>
+                <tr><td>Page Speed</td><td><span class="badge-pass">Good (Shopify CDN)</span></td><td><span class="badge-pass">Sub-2 second loads</span></td></tr>
+                <tr><td>Analytics</td><td><span class="badge-pass">GA4 + FB Pixel active</span></td><td><span class="badge-pass">GA4 + Meta Pixel</span></td></tr>
+                <tr><td>Structured Data</td><td><span class="badge-warn">Partial</span></td><td><span class="badge-pass">Full Product + FAQ + Review</span></td></tr>
+                <tr><td>Content Strategy</td><td><span class="badge-fail">None (no blog content)</span></td><td><span class="badge-pass">Blog + guides + landing pages</span></td></tr>
+                <tr><td>Product Catalog</td><td><span class="badge-warn">16 products (thin)</span></td><td><span class="badge-pass">50+ with variants</span></td></tr>
+                <tr><td>Social Presence</td><td><span class="badge-warn">Facebook only</span></td><td><span class="badge-pass">FB + IG + TikTok + Pinterest</span></td></tr>
+                <tr><td>Reviews</td><td><span class="badge-fail">No review system</span></td><td><span class="badge-pass">Photo reviews with schema</span></td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- 2. TECHNOLOGY STACK -->
+<section class="section" id="s2">
+    <div class="section-header">
+        <span class="section-num">2</span>
+        <h2>Technology Stack</h2>
+    </div>
+
+    <div class="diagram">
+<pre>
+ CAREK9.COM &mdash; CURRENT ARCHITECTURE
+ ========================================
+
+  CUSTOMER TOUCHPOINTS
+  +----------+  +----------+
+  | Website  |  | Facebook |    &#10060; No Instagram Shop
+  | Desktop  |  |   Page   |    &#10060; No Google Shopping
+  | &amp; Mobile |  |          |    &#10060; No TikTok
+  +----+-----+  +----+-----+
+       |             |
+       +------+------+
+              |
+              v
+  +----------------------------------------------------------+
+  |                                                          |
+  |             SHOPIFY (Dawn Theme / Custom)                |
+  |             Store: wadm-carek9.myshopify.com              |
+  |                                                          |
+  |  +----------------+ +----------------+ +---------------+ |
+  |  | Product Catalog | | Shopify        | | Shopify       | |
+  |  |   16 products   | | Payments       | | Blog          | |
+  |  |   4 collections | | PayPal, Apple  | | (empty)       | |
+  |  |                | | Google, Shop   | |               | |
+  |  +----------------+ +----------------+ +---------------+ |
+  |                                                          |
+  |  INCLUDED: SSL, CDN, 99.9% uptime, responsive theme     |
+  +----------------------------------------------------------+
+       |              |               |
+       v              v               v
+  +-----------+ +-----------+ +------------------+
+  |  GA4      | | Meta      | | Google Merchant  |
+  |  G-3N00.. | | Pixel     | | Center           |
+  |  &#9989; Active | | &#9989; Active | | MC-NV3BEC..      |
+  +-----------+ +-----------+ +------------------+
+       |
+       v
+  +----------------------------------------------------------+
+  |  THIRD-PARTY INTEGRATIONS                                |
+  |  +-- Globo Form Builder (UGC / testimonial collection)   |
+  |  +-- Shopify Web Pixels Manager                          |
+  +----------------------------------------------------------+
+</pre>
+    </div>
+
+    <h3>What's Working</h3>
+    <div class="card-grid">
+        <div class="card" style="border-left: 3px solid var(--green);">
+            <h4 style="color: var(--green);">&#9989; Platform Choice</h4>
+            <p>Shopify is the #1 ranked e-commerce platform for SEO in 2026. Solid foundation.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--green);">
+            <h4 style="color: var(--green);">&#9989; Analytics Setup</h4>
+            <p>GA4 + Meta Pixel + Google Merchant Center all active and tracking.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--green);">
+            <h4 style="color: var(--green);">&#9989; AI-Friendly Robots.txt</h4>
+            <p>Explicitly allows GPTBot, Claude-Web, PerplexityBot, Cohere &mdash; ahead of most competitors.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 3. SEO AUDIT -->
+<section class="section" id="s3">
+    <div class="section-header">
+        <span class="section-num">3</span>
+        <h2>SEO Audit Findings</h2>
+    </div>
+
+    <h3>On-Page SEO Scorecard</h3>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th>Element</th><th>Status</th><th>Notes</th></tr></thead>
+            <tbody>
+                <tr><td>Page Title (Homepage)</td><td><span class="badge-warn">WEAK</span></td><td>"CareK9" only &mdash; no keywords like "dog treats" or "pet wellness"</td></tr>
+                <tr><td>Meta Description</td><td><span class="badge-pass">PRESENT</span></td><td>Exists but could be more keyword-rich and compelling</td></tr>
+                <tr><td>H1 Tag</td><td><span class="badge-pass">GOOD</span></td><td>"Your Dog's New Favorite Shop" &mdash; engaging but not keyword-optimized</td></tr>
+                <tr><td>H2 Structure</td><td><span class="badge-pass">GOOD</span></td><td>Multiple descriptive H2s with proper hierarchy</td></tr>
+                <tr><td>Image Alt Text</td><td><span class="badge-warn">INCOMPLETE</span></td><td>Some images missing alt text, others are generic</td></tr>
+                <tr><td>Internal Linking</td><td><span class="badge-warn">BASIC</span></td><td>Collection links exist but no strategic interlinking</td></tr>
+                <tr><td>Schema Markup</td><td><span class="badge-pass">PARTIAL</span></td><td>Organization, WebSite, OnlineStore, FAQPage present</td></tr>
+                <tr><td>Open Graph Tags</td><td><span class="badge-pass">PRESENT</span></td><td>Via schema.org Organization markup</td></tr>
+                <tr><td>Canonical Tags</td><td><span class="badge-pass">AUTO</span></td><td>Shopify handles automatically</td></tr>
+                <tr><td>XML Sitemap</td><td><span class="badge-pass">AUTO</span></td><td>Shopify auto-generated, 4 sub-sitemaps</td></tr>
+                <tr><td>Blog / Content</td><td><span class="badge-fail">EMPTY</span></td><td>Blog section exists but has no published posts</td></tr>
+                <tr><td>URL Structure</td><td><span class="badge-pass">CLEAN</span></td><td>SEO-friendly: <code>/products/crispy-pollack-skin</code></td></tr>
+                <tr><td>Product Reviews</td><td><span class="badge-fail">NONE</span></td><td>No review app installed &mdash; no social proof</td></tr>
+                <tr><td>Backlink Profile</td><td><span class="badge-fail">WEAK</span></td><td>New brand, likely minimal backlinks</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Missing Keywords &amp; Search Opportunities</h3>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th>Keyword</th><th>Monthly Searches</th><th>On Site?</th><th>Difficulty</th></tr></thead>
+            <tbody>
+                <tr><td>"healthy dog treats"</td><td><strong>~14,800</strong></td><td><span class="badge-warn">Partial</span></td><td>Medium</td></tr>
+                <tr><td>"natural dog treats"</td><td><strong>~9,900</strong></td><td><span class="badge-fail">NO</span></td><td>Medium</td></tr>
+                <tr><td>"dog food topper"</td><td><strong>~8,100</strong></td><td><span class="badge-pass">YES</span></td><td>Medium</td></tr>
+                <tr><td>"dog paw cleaner"</td><td><strong>~6,600</strong></td><td><span class="badge-pass">YES</span></td><td>Low</td></tr>
+                <tr><td>"grain free dog treats"</td><td><strong>~5,400</strong></td><td><span class="badge-fail">NO</span></td><td>Medium</td></tr>
+                <tr><td>"dog bath products"</td><td><strong>~3,600</strong></td><td><span class="badge-warn">Partial</span></td><td>Low</td></tr>
+                <tr><td>"probiotic for dogs"</td><td><strong>~12,100</strong></td><td><span class="badge-warn">Partial</span></td><td>High</td></tr>
+                <tr><td>"dog dental treats"</td><td><strong>~6,600</strong></td><td><span class="badge-fail">NO</span></td><td>Medium</td></tr>
+                <tr><td>"joint supplement for dogs"</td><td><strong>~8,100</strong></td><td><span class="badge-warn">Partial</span></td><td>High</td></tr>
+                <tr><td>"human grade dog treats"</td><td><strong>~2,400</strong></td><td><span class="badge-fail">NO</span></td><td>Low</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- 4. GEO READINESS -->
+<section class="section" id="s4">
+    <div class="section-header">
+        <span class="section-num">4</span>
+        <h2>GEO / AI Search Readiness</h2>
+    </div>
+    <p>CareK9 is <strong>ahead of most small brands</strong> in GEO readiness. The robots.txt explicitly allows AI crawlers (GPTBot, Claude-Web, PerplexityBot), and multiple schema types are already implemented.</p>
+
+    <h3>Schema Markup Status</h3>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th>Schema Type</th><th>Status</th><th>Quality</th><th>Notes</th></tr></thead>
+            <tbody>
+                <tr><td>Organization</td><td><span class="badge-pass">Present</span></td><td><span class="badge-pass">Good</span></td><td>Contact info, email, name</td></tr>
+                <tr><td>WebSite</td><td><span class="badge-pass">Present</span></td><td><span class="badge-pass">Good</span></td><td>Search action template included</td></tr>
+                <tr><td>OnlineStore</td><td><span class="badge-pass">Present</span></td><td><span class="badge-pass">Excellent</span></td><td>Price range, currency, payments, categories, founding year</td></tr>
+                <tr><td>FAQPage</td><td><span class="badge-pass">Present</span></td><td><span class="badge-pass">Good</span></td><td>7 Q&amp;A blocks on homepage</td></tr>
+                <tr><td>Product</td><td><span class="badge-warn">Partial</span></td><td><span class="badge-warn">Needs work</span></td><td>Basic product data, missing reviews/ratings</td></tr>
+                <tr><td>Review / Rating</td><td><span class="badge-fail">Missing</span></td><td>&mdash;</td><td>No review app = no review schema</td></tr>
+                <tr><td>BreadcrumbList</td><td><span class="badge-fail">Missing</span></td><td>&mdash;</td><td>Should be added for navigation context</td></tr>
+                <tr><td>Article (Blog)</td><td><span class="badge-fail">Missing</span></td><td>&mdash;</td><td>No blog content published yet</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card" style="border-left: 3px solid var(--green); margin-top: 1.5rem;">
+        <h4 style="color: var(--green);">Competitive Advantage: AI Crawler Access</h4>
+        <p>CareK9's robots.txt explicitly allows GPTBot, Claude-Web, PerplexityBot, and Cohere-ai. Most competitors block these crawlers. This means when someone asks ChatGPT or Perplexity <em>"What are the best natural dog treats?"</em> &mdash; CareK9's products <strong>can</strong> be discovered and recommended. This is a significant head start.</p>
+    </div>
+</section>
+
+<!-- 5. SPEED & PERFORMANCE -->
+<section class="section" id="s5">
+    <div class="section-header">
+        <span class="section-num">5</span>
+        <h2>Speed &amp; Performance</h2>
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th>Factor</th><th>Status</th><th>Notes</th></tr></thead>
+            <tbody>
+                <tr><td>Hosting / CDN</td><td><span class="badge-pass">Excellent</span></td><td>Shopify global CDN with auto-scaling</td></tr>
+                <tr><td>SSL / HTTPS</td><td><span class="badge-pass">Active</span></td><td>Full HTTPS enforcement</td></tr>
+                <tr><td>Font Loading</td><td><span class="badge-pass">Optimized</span></td><td>Montserrat with <code>font-display: swap</code></td></tr>
+                <tr><td>Image Format</td><td><span class="badge-pass">Auto WebP</span></td><td>Shopify auto-converts images</td></tr>
+                <tr><td>Theme Weight</td><td><span class="badge-pass">Light</span></td><td>Dawn is Shopify's fastest theme</td></tr>
+                <tr><td>Third-Party Scripts</td><td><span class="badge-warn">Moderate</span></td><td>GA4, Meta Pixel, Globo Form Builder add some weight</td></tr>
+                <tr><td>Uptime</td><td><span class="badge-pass">99.9%</span></td><td>Shopify SLA guarantee</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p><strong>Overall:</strong> Performance is strong thanks to Shopify's infrastructure. The Dawn theme is one of the fastest available. Main improvement area is minimizing third-party script impact.</p>
+</section>
+
+<!-- 6. CONTENT & CONVERSION -->
+<section class="section" id="s6">
+    <div class="section-header">
+        <span class="section-num">6</span>
+        <h2>Content &amp; Conversion Gaps</h2>
+    </div>
+
+    <div class="card-grid">
+        <div class="card" style="border-left: 3px solid var(--red);">
+            <h4 style="color: var(--red);">&#10060; No Blog Content</h4>
+            <p>Blog section exists in Shopify but has zero published posts. This is the #1 missed SEO opportunity. Topics like "best treats for puppies," "how to clean dog paws," and "probiotics for dogs" drive thousands of searches monthly.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--red);">
+            <h4 style="color: var(--red);">&#10060; No Customer Reviews</h4>
+            <p>No review app installed. Zero social proof on product pages. Reviews directly impact conversion rate (products with reviews convert 270% more) and generate review schema for Google rich results.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--red);">
+            <h4 style="color: var(--red);">&#10060; Single Social Channel</h4>
+            <p>Only Facebook linked. No Instagram (critical for pet brands), no TikTok (viral pet content), no Pinterest (high-intent shoppers). Pet content performs exceptionally well on visual platforms.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--amber);">
+            <h4 style="color: var(--amber);">&#9888; Small Product Catalog</h4>
+            <p>16 products is thin for SEO. Each product page is a potential search landing page. Expanding to 40-50+ products (including bundles, subscription boxes, seasonal items) significantly increases organic search surface area.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--amber);">
+            <h4 style="color: var(--amber);">&#9888; No Email Marketing Visible</h4>
+            <p>Newsletter signup exists in footer but no evidence of active email automation (abandoned cart, post-purchase, win-back, seasonal campaigns).</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--amber);">
+            <h4 style="color: var(--amber);">&#9888; Weak About Page</h4>
+            <p>Great origin story (shelter dog in 2011) but no team photos, no facility images, no certifications displayed. For a "human-grade" premium brand, transparency builds trust and E-E-A-T signals.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 7. COMPETITORS -->
+<section class="section" id="s7">
+    <div class="section-header">
+        <span class="section-num">7</span>
+        <h2>Competitor Landscape</h2>
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th>Competitor</th><th>Category</th><th>Strength</th><th>CareK9 Advantage</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Chewy</strong></td><td>Everything pet</td><td>Massive catalog, brand trust, SEO dominance</td><td>Artisanal quality, human-grade, small batch</td></tr>
+                <tr><td><strong>PetSmart</strong></td><td>Everything pet</td><td>Physical stores + online, huge brand</td><td>DTC relationship, ingredient transparency</td></tr>
+                <tr><td><strong>The Farmer's Dog</strong></td><td>Fresh dog food</td><td>Massive VC funding, strong brand, subscriptions</td><td>Treats + toppers + paw care (broader niche)</td></tr>
+                <tr><td><strong>Paw Naturals</strong></td><td>Raw food / treats</td><td>Local delivery, raw food focus</td><td>Wider product range, online-first</td></tr>
+                <tr><td><strong>Portland Pet Food</strong></td><td>Human-grade treats</td><td>Strong brand, retail distribution</td><td>Functional supplements (joint, probiotic)</td></tr>
+                <tr><td><strong>Bocce's Bakery</strong></td><td>All-natural treats</td><td>Fun branding, wide distribution</td><td>Fresh-to-order, proprietary process</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card" style="border-left: 3px solid var(--accent-light);">
+        <h4>CareK9's Unique Position</h4>
+        <p>CareK9 sits in a sweet spot: <strong>premium quality + functional wellness + fresh-to-order</strong>. Most competitors are either mass-market (Chewy/PetSmart) or single-category (Farmer's Dog = food only). CareK9 spans treats, supplements, paw care, and bath &mdash; a unique combination. The "made in a human food facility" angle is powerful but underutilized in SEO content.</p>
+    </div>
+</section>
+
+<!-- 8. WHAT'S WORKING -->
+<section class="section" id="s8">
+    <div class="section-header">
+        <span class="section-num">8</span>
+        <h2>What's Working Well</h2>
+    </div>
+
+    <ul class="checklist">
+        <li><span class="check-icon check-pass">&#10003;</span> <strong>Shopify (Dawn theme)</strong> &mdash; fastest Shopify theme, excellent SEO foundation</li>
+        <li><span class="check-icon check-pass">&#10003;</span> <strong>OnlineStore schema</strong> &mdash; includes price range, currency, payment methods, product categories, founding year</li>
+        <li><span class="check-icon check-pass">&#10003;</span> <strong>FAQPage schema</strong> &mdash; 7 well-structured Q&amp;A blocks with health/product info</li>
+        <li><span class="check-icon check-pass">&#10003;</span> <strong>AI crawler access</strong> &mdash; GPTBot, Claude-Web, PerplexityBot all explicitly allowed</li>
+        <li><span class="check-icon check-pass">&#10003;</span> <strong>GA4 + Meta Pixel + Google Merchant Center</strong> &mdash; full tracking suite active</li>
+        <li><span class="check-icon check-pass">&#10003;</span> <strong>Clean URL structure</strong> &mdash; <code>/products/crispy-pollack-skin</code> not <code>/index.php?id=479</code></li>
+        <li><span class="check-icon check-pass">&#10003;</span> <strong>Multiple payment options</strong> &mdash; Credit Card, PayPal, Apple Pay, Google Pay, Shop Pay</li>
+        <li><span class="check-icon check-pass">&#10003;</span> <strong>Compelling brand story</strong> &mdash; shelter dog origin, human-grade facility, founded on real need</li>
+        <li><span class="check-icon check-pass">&#10003;</span> <strong>Free shipping threshold</strong> &mdash; $150 free shipping encourages larger orders</li>
+        <li><span class="check-icon check-pass">&#10003;</span> <strong>UGC collection</strong> &mdash; Globo Form Builder collects customer pet photos/videos</li>
+    </ul>
+</section>
+
+<!-- 9. RECOMMENDED APP STACK -->
+<section class="section" id="s9">
+    <div class="section-header">
+        <span class="section-num">9</span>
+        <h2>Recommended App Stack</h2>
+    </div>
+
+    <p>CareK9 is already on Shopify, so no migration needed. These apps fill the gaps:</p>
+
+    <div class="diagram">
+<pre>
+ CAREK9 &mdash; OPTIMIZED SHOPIFY APP STACK
+ ==========================================
+
+  CURRENT (Keep)
+  +----------------------------------------------------------+
+  | Shopify Dawn Theme &#9989;  |  GA4 &#9989;  |  Meta Pixel &#9989;          |
+  | Google Merchant &#9989;     |  Globo Form Builder &#9989;           |
+  +----------------------------------------------------------+
+
+  ADD: SEO &amp; GEO
+  +----------------------------------------------------------+
+  | JSON-LD for SEO ($9.99/mo)                               |
+  | +-- Adds Product schema with reviews                     |
+  | +-- BreadcrumbList schema                                |
+  | +-- Enhanced Organization schema                         |
+  | +-- Article schema for blog posts                        |
+  |                                                          |
+  | Yoast SEO for Shopify (free tier)                        |
+  | +-- Meta title / description templates                   |
+  | +-- Readability analysis for blog content                |
+  | +-- Keyword optimization suggestions                     |
+  +----------------------------------------------------------+
+
+  ADD: REVIEWS &amp; SOCIAL PROOF
+  +----------------------------------------------------------+
+  | Judge.me (free tier)                                     |
+  | +-- Auto review request emails after purchase            |
+  | +-- Photo &amp; video reviews                               |
+  | +-- Review schema for Google stars                       |
+  | +-- Review carousel widget on homepage                   |
+  | +-- Q&amp;A on product pages                                |
+  +----------------------------------------------------------+
+
+  ADD: EMAIL &amp; SMS MARKETING
+  +----------------------------------------------------------+
+  | Klaviyo (free &lt; 250 contacts)                            |
+  | +-- Abandoned cart recovery (recover 5-10% lost sales)   |
+  | +-- Post-purchase: "How does your dog like the treats?"  |
+  | +-- Win-back: "Haven't ordered in 60 days? 15% off"     |
+  | +-- New product announcements                            |
+  | +-- Seasonal campaigns                                   |
+  +----------------------------------------------------------+
+
+  ADD: SUBSCRIPTIONS
+  +----------------------------------------------------------+
+  | Recharge or Seal Subscriptions                           |
+  | +-- "Subscribe &amp; Save 15%" on treats                    |
+  | +-- Monthly treat box subscriptions                      |
+  | +-- Auto-reorder for consumables                         |
+  | +-- Predictable recurring revenue                        |
+  +----------------------------------------------------------+
+
+  ADD: SOCIAL SELLING
+  +----------------------------------------------------------+
+  | Instagram Shopping (free via Shopify)                     |
+  | +-- Shoppable posts featuring dogs with products         |
+  | +-- Pet content drives massive engagement                |
+  |                                                          |
+  | Instafeed (free tier)                                    |
+  | +-- Show Instagram feed on website                       |
+  +----------------------------------------------------------+
+</pre>
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th>App</th><th>Purpose</th><th>Cost</th><th>Priority</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Judge.me</strong></td><td>Product reviews with schema</td><td>Free</td><td><span class="badge-fail">Must-have</span></td></tr>
+                <tr><td><strong>JSON-LD for SEO</strong></td><td>Enhanced schema markup</td><td>$9.99/mo</td><td><span class="badge-fail">Must-have</span></td></tr>
+                <tr><td><strong>Klaviyo</strong></td><td>Email + SMS automation</td><td>Free (&lt;250)</td><td><span class="badge-fail">Must-have</span></td></tr>
+                <tr><td><strong>Yoast SEO</strong></td><td>Meta tags + content optimization</td><td>Free</td><td><span class="badge-warn">High</span></td></tr>
+                <tr><td><strong>Recharge Subscriptions</strong></td><td>Subscribe &amp; save for treats</td><td>$99/mo</td><td><span class="badge-warn">High</span></td></tr>
+                <tr><td><strong>Instagram Shopping</strong></td><td>Shoppable IG posts</td><td>Free</td><td><span class="badge-warn">High</span></td></tr>
+                <tr><td><strong>Instafeed</strong></td><td>IG feed on site</td><td>Free</td><td><span class="badge-info">Nice-to-have</span></td></tr>
+                <tr><td><strong>PageFly</strong></td><td>Custom landing pages</td><td>Free (3 pg)</td><td><span class="badge-info">Nice-to-have</span></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Estimated Monthly Cost (New Apps)</h3>
+    <div class="stat-grid">
+        <div class="stat-box" style="border-color: var(--green);">
+            <div class="stat-value" style="color: var(--green);">~$10</div>
+            <div class="stat-label">Essential Apps / Month<br><small>(Judge.me free + JSON-LD $9.99)</small></div>
+        </div>
+        <div class="stat-box" style="border-color: var(--amber);">
+            <div class="stat-value" style="color: var(--amber);">~$109</div>
+            <div class="stat-label">Full Stack / Month<br><small>(add Recharge $99)</small></div>
+        </div>
+    </div>
+</section>
+
+<!-- 10. ACTION PLAN -->
+<section class="section" id="s10">
+    <div class="section-header">
+        <span class="section-num">10</span>
+        <h2>Action Plan</h2>
+    </div>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h4>Phase 1: Quick Wins</h4>
+            <div class="timeline-meta">Week 1 &mdash; Immediate impact, minimal effort</div>
+            <ul class="checklist">
+                <li><span class="check-icon check-empty"></span> Install Judge.me (free) &mdash; start collecting reviews immediately</li>
+                <li><span class="check-icon check-empty"></span> Install JSON-LD for SEO &mdash; enhance all schema markup</li>
+                <li><span class="check-icon check-empty"></span> Optimize homepage title: "CareK9 | Premium Dog Treats, Supplements &amp; Paw Care"</li>
+                <li><span class="check-icon check-empty"></span> Add keyword-rich alt text to all product images</li>
+                <li><span class="check-icon check-empty"></span> Create Instagram account (@carek9official) and connect shop</li>
+                <li><span class="check-icon check-empty"></span> Email existing customers asking for reviews</li>
+            </ul>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h4>Phase 2: Content Foundation</h4>
+            <div class="timeline-meta">Week 2&ndash;4 &mdash; Build organic search presence</div>
+            <ul class="checklist">
+                <li><span class="check-icon check-empty"></span> Write &amp; publish 4 cornerstone blog posts (see topics below)</li>
+                <li><span class="check-icon check-empty"></span> Optimize all product descriptions with target keywords</li>
+                <li><span class="check-icon check-empty"></span> Expand meta descriptions for every product page</li>
+                <li><span class="check-icon check-empty"></span> Add team/founder photos and facility images to About page</li>
+                <li><span class="check-icon check-empty"></span> Create a "Why Human-Grade?" landing page</li>
+                <li><span class="check-icon check-empty"></span> Set up Klaviyo with abandoned cart + post-purchase flows</li>
+            </ul>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h4>Phase 3: Growth Engine</h4>
+            <div class="timeline-meta">Month 2&ndash;3 &mdash; Scale organic traffic</div>
+            <ul class="checklist">
+                <li><span class="check-icon check-empty"></span> Publish 2 blog posts per week (SEO-optimized)</li>
+                <li><span class="check-icon check-empty"></span> Launch subscription option for repeat treats/toppers</li>
+                <li><span class="check-icon check-empty"></span> Create product bundles (e.g. "New Dog Parent Kit")</li>
+                <li><span class="check-icon check-empty"></span> Set up Google Shopping free product listings</li>
+                <li><span class="check-icon check-empty"></span> Build Instagram content calendar (3-5 posts/week)</li>
+                <li><span class="check-icon check-empty"></span> Reach out to pet bloggers / micro-influencers for backlinks</li>
+                <li><span class="check-icon check-empty"></span> Consider TikTok &mdash; pet content goes viral regularly</li>
+            </ul>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot" style="background: var(--green);"></div>
+            <h4>Phase 4: Authority Building</h4>
+            <div class="timeline-meta">Month 3&ndash;6 &mdash; Become the go-to premium pet brand</div>
+            <ul class="checklist">
+                <li><span class="check-icon check-empty"></span> Pursue partnerships with dog trainers / vets for credibility</li>
+                <li><span class="check-icon check-empty"></span> Get featured in pet industry publications</li>
+                <li><span class="check-icon check-empty"></span> Build email list to 1,000+ subscribers</li>
+                <li><span class="check-icon check-empty"></span> Launch seasonal products (holiday treats, summer paw care)</li>
+                <li><span class="check-icon check-empty"></span> Explore wholesale / retail partnerships</li>
+                <li><span class="check-icon check-empty"></span> Monitor and respond to all reviews for E-E-A-T signals</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>Recommended Blog Topics (Highest SEO Value)</h3>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th>Blog Post Title</th><th>Target Keyword</th><th>Monthly Searches</th></tr></thead>
+            <tbody>
+                <tr><td>"The Complete Guide to Probiotics for Dogs"</td><td>probiotic for dogs</td><td>~12,100</td></tr>
+                <tr><td>"Healthy Dog Treats: What to Look For (And Avoid)"</td><td>healthy dog treats</td><td>~14,800</td></tr>
+                <tr><td>"How to Clean Your Dog's Paws After Every Walk"</td><td>dog paw cleaner</td><td>~6,600</td></tr>
+                <tr><td>"Human-Grade Dog Treats: Are They Worth It?"</td><td>human grade dog treats</td><td>~2,400</td></tr>
+                <tr><td>"Best Joint Supplements for Dogs in 2026"</td><td>joint supplement for dogs</td><td>~8,100</td></tr>
+                <tr><td>"Grain-Free Dog Treats: Benefits and Best Options"</td><td>grain free dog treats</td><td>~5,400</td></tr>
+                <tr><td>"Dog Bath Guide: How Often and With What Products"</td><td>dog bath products</td><td>~3,600</td></tr>
+                <tr><td>"What Are Dog Food Toppers and Do They Work?"</td><td>dog food topper</td><td>~8,100</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="verdict">
+        <h3>Bottom Line</h3>
+        <p style="font-size: 1.05rem; color: var(--heading); margin-top: 0.5rem;">CareK9 has a <strong>strong foundation</strong> on the right platform. The biggest wins are <strong>free or nearly free</strong>: install Judge.me, start blogging, optimize titles/descriptions, and launch Instagram. These changes alone could 3-5x organic traffic within 6 months.</p>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>CareK9 &mdash; Website Audit &amp; SEO/GEO Report &mdash; February 2026</p>
+    <p style="margin-top: 0.5rem;"><a href="../">&larr; Back to All Audits</a></p>
+</footer>
+
+</main>
+
+</body>
+</html>

@@ -3,1291 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TJ Flowers & Events — Website Audit & Migration Report</title>
+    <title>Site Audits — SEO, GEO &amp; Performance Reports</title>
     <style>
-        /* ── Reset & Base ─────────────────────────────────────── */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
         :root {
-            --bg: #0b0f19;
-            --surface: #131829;
-            --surface2: #1a2035;
-            --border: #232a3f;
-            --text: #c9d1e3;
-            --text-muted: #6b7a99;
-            --heading: #e8ecf4;
+            --bg: #08090e;
+            --surface: #10131c;
+            --surface2: #171c2a;
+            --border: #1f2638;
+            --text: #b8c0d6;
+            --text-muted: #5d6a87;
+            --heading: #e4e9f4;
             --accent: #7c6aef;
             --accent-light: #9b8df7;
             --green: #34d399;
-            --green-dim: rgba(52, 211, 153, 0.12);
             --red: #f87171;
-            --red-dim: rgba(248, 113, 113, 0.12);
             --amber: #fbbf24;
-            --amber-dim: rgba(251, 191, 36, 0.12);
             --blue: #60a5fa;
-            --blue-dim: rgba(96, 165, 250, 0.12);
             --pink: #f472b6;
-            --radius: 12px;
-            --radius-sm: 8px;
+            --radius: 16px;
         }
-
         html { scroll-behavior: smooth; }
-
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.7;
-            font-size: 15px;
-            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
         }
 
-        /* ── Typography ───────────────────────────────────────── */
-        h1, h2, h3, h4 { color: var(--heading); font-weight: 700; line-height: 1.3; }
-        h1 { font-size: 2.2rem; }
-        h2 { font-size: 1.5rem; margin-top: 3rem; }
-        h3 { font-size: 1.15rem; margin-top: 1.5rem; color: var(--accent-light); }
-        p { margin-top: 0.75rem; }
-        a { color: var(--accent-light); text-decoration: none; transition: color 0.2s; }
-        a:hover { color: #bdb0ff; }
-        strong { color: var(--heading); }
-        code {
-            font-family: 'JetBrains Mono', 'Fira Code', monospace;
-            font-size: 0.85em;
-            background: var(--surface2);
-            padding: 2px 6px;
-            border-radius: 4px;
-            color: var(--accent-light);
-        }
-
-        /* ── Layout ───────────────────────────────────────────── */
-        .wrapper {
-            max-width: 1080px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        /* ── Cover / Hero ─────────────────────────────────────── */
-        .cover {
+        /* Hero */
+        .hero {
             position: relative;
-            padding: 5rem 0 3.5rem;
             text-align: center;
+            padding: 6rem 2rem 4rem;
             overflow: hidden;
         }
-        .cover::before {
+        .hero::before {
             content: '';
             position: absolute;
-            top: -120px; left: 50%; transform: translateX(-50%);
-            width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(124,106,239,0.18) 0%, transparent 70%);
+            top: -200px; left: 50%; transform: translateX(-50%);
+            width: 800px; height: 800px;
+            background: radial-gradient(circle, rgba(124,106,239,0.15) 0%, rgba(96,165,250,0.05) 40%, transparent 70%);
             pointer-events: none;
         }
-        .cover .badge {
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: var(--heading);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+        .hero h1 span { color: var(--accent-light); }
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            max-width: 560px;
+            margin: 0.5rem auto 0;
+        }
+        .hero-badge {
             display: inline-block;
             background: var(--surface2);
             border: 1px solid var(--border);
-            padding: 6px 16px;
+            padding: 6px 18px;
             border-radius: 99px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--text-muted);
-            letter-spacing: 0.04em;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
         }
-        .cover h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
-        .cover h1 span { color: var(--accent-light); }
-        .cover .subtitle {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0.5rem auto 0;
-        }
-        .cover-meta {
-            margin-top: 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-        .cover-meta span { display: flex; align-items: center; gap: 6px; }
 
-        /* ── Table of Contents ────────────────────────────────── */
-        .toc {
+        /* Cards Grid */
+        .wrapper { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0 4rem;
+        }
+        @media (max-width: 500px) { .card-grid { grid-template-columns: 1fr; } }
+
+        .audit-card {
+            position: relative;
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: var(--radius);
             padding: 2rem;
-            margin: 2rem 0 3rem;
-        }
-        .toc h3 { margin-top: 0; color: var(--heading); font-size: 1rem; margin-bottom: 1rem; }
-        .toc-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 0.5rem;
-        }
-        .toc a {
+            transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+            text-decoration: none;
+            color: inherit;
             display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 12px;
-            border-radius: var(--radius-sm);
-            color: var(--text);
-            font-size: 0.9rem;
-            transition: background 0.2s;
+            flex-direction: column;
+            overflow: hidden;
         }
-        .toc a:hover { background: var(--surface2); color: var(--accent-light); }
-        .toc-num {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 26px; height: 26px;
-            border-radius: 6px;
-            background: var(--surface2);
-            color: var(--accent-light);
-            font-size: 0.75rem;
-            font-weight: 700;
-            flex-shrink: 0;
+        .audit-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            box-shadow: 0 12px 40px rgba(124, 106, 239, 0.12);
+        }
+        .audit-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            border-radius: var(--radius) var(--radius) 0 0;
         }
 
-        /* ── Sections ─────────────────────────────────────────── */
-        .section { margin: 3.5rem 0; }
-        .section-header {
+        .card-header {
             display: flex;
             align-items: center;
             gap: 14px;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border);
+            margin-bottom: 1rem;
         }
-        .section-num {
-            display: inline-flex;
+        .card-icon {
+            width: 48px; height: 48px;
+            border-radius: 12px;
+            display: flex;
             align-items: center;
             justify-content: center;
-            width: 38px; height: 38px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, var(--accent), #5b4cd4);
-            color: #fff;
-            font-size: 0.9rem;
-            font-weight: 800;
+            font-size: 1.4rem;
             flex-shrink: 0;
         }
-        .section-header h2 { margin: 0; }
-
-        /* ── Cards ────────────────────────────────────────────── */
-        .card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            margin: 1rem 0;
-        }
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-        .card h4 { font-size: 0.95rem; margin-bottom: 0.75rem; }
-
-        /* ── Status Badges ────────────────────────────────────── */
-        .badge-fail {
-            display: inline-block;
-            background: var(--red-dim);
-            color: var(--red);
-            padding: 3px 10px;
-            border-radius: 6px;
-            font-size: 0.75rem;
+        .card-header h2 {
+            font-size: 1.25rem;
+            color: var(--heading);
             font-weight: 700;
-            letter-spacing: 0.03em;
-        }
-        .badge-warn {
-            display: inline-block;
-            background: var(--amber-dim);
-            color: var(--amber);
-            padding: 3px 10px;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
-        .badge-pass {
-            display: inline-block;
-            background: var(--green-dim);
-            color: var(--green);
-            padding: 3px 10px;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
-        .badge-info {
-            display: inline-block;
-            background: var(--blue-dim);
-            color: var(--blue);
-            padding: 3px 10px;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
-
-        /* ── Tables ───────────────────────────────────────────── */
-        .table-wrap {
-            overflow-x: auto;
-            margin: 1rem 0;
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.88rem;
-        }
-        thead { background: var(--surface2); }
-        th {
-            text-align: left;
-            padding: 12px 16px;
-            color: var(--text-muted);
-            font-weight: 600;
-            font-size: 0.78rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-bottom: 1px solid var(--border);
-        }
-        td {
-            padding: 12px 16px;
-            border-bottom: 1px solid var(--border);
-            vertical-align: top;
-        }
-        tr:last-child td { border-bottom: none; }
-        tr:hover td { background: rgba(124, 106, 239, 0.04); }
-
-        /* ── Diagrams (pre blocks) ────────────────────────────── */
-        .diagram {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            overflow-x: auto;
-        }
-        .diagram pre {
-            font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
-            font-size: 0.78rem;
-            line-height: 1.6;
-            color: var(--text);
-            white-space: pre;
             margin: 0;
         }
-
-        /* ── Score Bars ───────────────────────────────────────── */
-        .score-row {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin: 0.5rem 0;
-        }
-        .score-label {
-            width: 130px;
-            font-size: 0.85rem;
-            flex-shrink: 0;
-            color: var(--text-muted);
-        }
-        .score-bar {
-            flex: 1;
-            height: 10px;
-            background: var(--surface2);
-            border-radius: 99px;
-            overflow: hidden;
-        }
-        .score-fill {
-            height: 100%;
-            border-radius: 99px;
-            transition: width 1s ease;
-        }
-        .score-val {
-            width: 50px;
-            text-align: right;
-            font-size: 0.85rem;
-            font-weight: 700;
-        }
-
-        /* ── Stat Boxes ───────────────────────────────────────── */
-        .stat-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        .stat-box {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.25rem;
-            text-align: center;
-        }
-        .stat-box .stat-value {
-            font-size: 2rem;
-            font-weight: 800;
-            line-height: 1.2;
-        }
-        .stat-box .stat-label {
+        .card-header small {
+            display: block;
             font-size: 0.8rem;
             color: var(--text-muted);
-            margin-top: 4px;
+            font-weight: 400;
+            margin-top: 2px;
         }
 
-        /* ── Verdict Box ──────────────────────────────────────── */
-        .verdict {
-            background: linear-gradient(135deg, rgba(124,106,239,0.12), rgba(96,165,250,0.08));
-            border: 1px solid var(--accent);
-            border-radius: var(--radius);
-            padding: 2rem;
-            margin: 2rem 0;
-            text-align: center;
-        }
-        .verdict h3 { color: var(--accent-light); font-size: 1.3rem; margin: 0 0 0.5rem; }
-        .verdict .price { font-size: 2.5rem; font-weight: 800; color: var(--heading); }
-        .verdict .price span { font-size: 1rem; color: var(--text-muted); font-weight: 400; }
-
-        /* ── Checklist ────────────────────────────────────────── */
-        .checklist { list-style: none; margin: 1rem 0; }
-        .checklist li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            padding: 8px 0;
-            border-bottom: 1px solid var(--border);
+        .card-desc {
             font-size: 0.9rem;
+            color: var(--text);
+            flex: 1;
+            margin-bottom: 1.25rem;
         }
-        .checklist li:last-child { border-bottom: none; }
-        .check-icon {
-            width: 20px; height: 20px;
+
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 1.25rem;
+        }
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
             border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        .card-date {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .card-arrow {
+            width: 32px; height: 32px;
+            border-radius: 8px;
+            background: var(--surface2);
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
-            font-size: 0.7rem;
-            margin-top: 2px;
+            color: var(--accent-light);
+            font-size: 1rem;
+            transition: background 0.2s;
         }
-        .check-empty {
-            border: 2px solid var(--border);
-            background: transparent;
-        }
-
-        /* ── Timeline ─────────────────────────────────────────── */
-        .timeline { position: relative; margin: 2rem 0; padding-left: 40px; }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 15px; top: 0; bottom: 0;
-            width: 2px;
-            background: var(--border);
-        }
-        .timeline-item { position: relative; margin-bottom: 2rem; }
-        .timeline-dot {
-            position: absolute;
-            left: -33px; top: 4px;
-            width: 12px; height: 12px;
-            border-radius: 50%;
+        .audit-card:hover .card-arrow {
             background: var(--accent);
-            border: 3px solid var(--bg);
-        }
-        .timeline-item h4 { font-size: 1rem; margin-bottom: 0.5rem; }
-        .timeline-item .timeline-meta {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 0.75rem;
+            color: #fff;
         }
 
-        /* ── Comparison Stars ─────────────────────────────────── */
-        .stars { color: var(--amber); letter-spacing: 2px; }
-        .stars-dim { color: var(--border); letter-spacing: 2px; }
+        /* Card Themes */
+        .card-flower::before { background: linear-gradient(90deg, var(--pink), var(--accent)); }
+        .card-flower .card-icon { background: rgba(244,114,182,0.12); color: var(--pink); }
 
-        /* ── Footer ───────────────────────────────────────────── */
+        .card-pet::before { background: linear-gradient(90deg, var(--amber), var(--green)); }
+        .card-pet .card-icon { background: rgba(251,191,36,0.12); color: var(--amber); }
+
+        /* Stats bar */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 3rem 0 1rem;
+            flex-wrap: wrap;
+        }
+        .stat { text-align: center; }
+        .stat-val { font-size: 2.2rem; font-weight: 800; color: var(--heading); }
+        .stat-label { font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+
+        /* Footer */
         .footer {
-            margin-top: 5rem;
-            padding: 2rem 0;
-            border-top: 1px solid var(--border);
             text-align: center;
-            color: var(--text-muted);
+            padding: 2.5rem 0;
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
             font-size: 0.8rem;
+            color: var(--text-muted);
         }
 
-        /* ── Responsive ───────────────────────────────────────── */
-        @media (max-width: 700px) {
-            .cover h1 { font-size: 1.8rem; }
-            .cover-meta { flex-direction: column; align-items: center; gap: 0.5rem; }
-            .card-grid { grid-template-columns: 1fr; }
-            .stat-grid { grid-template-columns: repeat(2, 1fr); }
-            .diagram pre { font-size: 0.65rem; }
-            .toc-grid { grid-template-columns: 1fr; }
-        }
-
-        /* ── Animations ───────────────────────────────────────── */
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(24px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .section { animation: fadeUp 0.5s ease both; }
-
-        /* ── Scroll anchor offset ─────────────────────────────── */
-        [id] { scroll-margin-top: 2rem; }
+        .audit-card { animation: fadeUp 0.5s ease both; }
+        .audit-card:nth-child(2) { animation-delay: 0.1s; }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- ════════════════════════════════════════════════════════════════ -->
-<!-- COVER                                                          -->
-<!-- ════════════════════════════════════════════════════════════════ -->
-<header class="cover">
-    <div class="wrapper">
-        <div class="badge">Confidential Report</div>
-        <h1>TJ Flowers & <span>Events</span></h1>
-        <p class="subtitle">Website Audit &amp; Migration Strategy Report — Full SEO, GEO, Performance Analysis &amp; Shopify Architecture Blueprint</p>
-        <div class="cover-meta">
-            <span>&#128205; 1640 York Ave, New York, NY 10028</span>
-            <span>&#128197; February 2026</span>
-            <span>&#127912; Since 1988</span>
+<header class="hero">
+    <div class="hero-badge">Website Intelligence Reports</div>
+    <h1>Site <span>Audits</span></h1>
+    <p>Comprehensive SEO, GEO, performance, and architecture analysis with migration strategies and actionable recommendations.</p>
+
+    <div class="stats-bar">
+        <div class="stat">
+            <div class="stat-val">2</div>
+            <div class="stat-label">Sites Audited</div>
+        </div>
+        <div class="stat">
+            <div class="stat-val">10</div>
+            <div class="stat-label">Sections Each</div>
+        </div>
+        <div class="stat">
+            <div class="stat-val">2026</div>
+            <div class="stat-label">Latest Data</div>
         </div>
     </div>
 </header>
 
 <main class="wrapper">
-
-<!-- ── Table of Contents ──────────────────────────────────────── -->
-<nav class="toc">
-    <h3>Table of Contents</h3>
-    <div class="toc-grid">
-        <a href="#s1"><span class="toc-num">1</span> Executive Summary</a>
-        <a href="#s2"><span class="toc-num">2</span> Current State Analysis</a>
-        <a href="#s3"><span class="toc-num">3</span> SEO Audit Findings</a>
-        <a href="#s4"><span class="toc-num">4</span> GEO / AI Search Readiness</a>
-        <a href="#s5"><span class="toc-num">5</span> Speed &amp; Performance</a>
-        <a href="#s6"><span class="toc-num">6</span> Competitor Landscape</a>
-        <a href="#s7"><span class="toc-num">7</span> Platform Recommendation</a>
-        <a href="#s8"><span class="toc-num">8</span> Shopify Architecture Blueprint</a>
-        <a href="#s9"><span class="toc-num">9</span> Migration Roadmap</a>
-        <a href="#s10"><span class="toc-num">10</span> Budget Estimate</a>
-    </div>
-</nav>
-
-<!-- ════════════════════════════════════════════════════════════════ -->
-<!-- 1. EXECUTIVE SUMMARY                                           -->
-<!-- ════════════════════════════════════════════════════════════════ -->
-<section class="section" id="s1">
-    <div class="section-header">
-        <span class="section-num">1</span>
-        <h2>Executive Summary</h2>
-    </div>
-
-    <p>TJ Flowers &amp; Events has proudly served New York City since <strong>1988</strong> &mdash; nearly four decades of floral excellence. However, the current website does not reflect that legacy.</p>
-    <p>The site runs on <strong>OpenCart</strong>, an outdated PHP e-commerce platform with severe SEO limitations, <strong>no working analytics</strong> (Google Analytics stopped collecting data in July 2023), and poor performance. Competitors like UrbanStems have migrated to modern platforms and are capturing market share.</p>
-
-    <div class="stat-grid">
-        <div class="stat-box">
-            <div class="stat-value" style="color: var(--red);">D-</div>
-            <div class="stat-label">Current SEO Grade</div>
-        </div>
-        <div class="stat-box">
-            <div class="stat-value" style="color: var(--red);">0</div>
-            <div class="stat-label">Schema Markups Present</div>
-        </div>
-        <div class="stat-box">
-            <div class="stat-value" style="color: var(--red);">DEAD</div>
-            <div class="stat-label">Google Analytics (since 2023)</div>
-        </div>
-        <div class="stat-box">
-            <div class="stat-value" style="color: var(--amber);">3.8&#9733;</div>
-            <div class="stat-label">Yelp Rating (32 reviews)</div>
-        </div>
-    </div>
-
-    <div class="table-wrap">
-        <table>
-            <thead>
-                <tr><th>Category</th><th>Current State</th><th>Industry Standard</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Platform</td><td><span class="badge-fail">OpenCart (outdated)</span></td><td><span class="badge-pass">Shopify / WooCommerce</span></td></tr>
-                <tr><td>SEO Score</td><td><span class="badge-fail">D-</span></td><td><span class="badge-pass">B+ or higher</span></td></tr>
-                <tr><td>GEO Readiness</td><td><span class="badge-fail">None</span></td><td><span class="badge-pass">Full schema markup</span></td></tr>
-                <tr><td>Page Speed</td><td><span class="badge-fail">Slow</span></td><td><span class="badge-pass">Sub-2 second loads</span></td></tr>
-                <tr><td>Analytics</td><td><span class="badge-fail">Dead (UA sunset)</span></td><td><span class="badge-pass">GA4 + Meta Pixel</span></td></tr>
-                <tr><td>Mobile Experience</td><td><span class="badge-warn">Weak</span></td><td><span class="badge-pass">Mobile-first design</span></td></tr>
-                <tr><td>Structured Data</td><td><span class="badge-fail">Missing</span></td><td><span class="badge-pass">Product + Local schema</span></td></tr>
-                <tr><td>Content Strategy</td><td><span class="badge-fail">None</span></td><td><span class="badge-pass">Blog + landing pages</span></td></tr>
-                <tr><td>Local SEO</td><td><span class="badge-warn">Minimal</span></td><td><span class="badge-pass">GMB optimized + local pages</span></td></tr>
-                <tr><td>Conversion Tools</td><td><span class="badge-warn">Basic cart only</span></td><td><span class="badge-pass">Reviews, email, SMS</span></td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="verdict">
-        <h3>Recommendation: Migrate to Shopify</h3>
-        <div class="price">$39 <span>/month</span></div>
-        <p style="margin-top: 0.75rem; color: var(--text-muted);">With a curated app stack designed for NYC florist operations</p>
-    </div>
-</section>
-
-<!-- ════════════════════════════════════════════════════════════════ -->
-<!-- 2. CURRENT STATE ANALYSIS                                      -->
-<!-- ════════════════════════════════════════════════════════════════ -->
-<section class="section" id="s2">
-    <div class="section-header">
-        <span class="section-num">2</span>
-        <h2>Current State Analysis</h2>
-    </div>
-
-    <h3>2.1 Current Technology Stack</h3>
-    <div class="diagram">
-<pre>
- CURRENT ARCHITECTURE  &#9888;  OUTDATED
- ==========================================
-
- Browser Layer
- +-----------+  +----------------+  +-----------+  +---------+
- |  jQuery   |  |  Revolution    |  |   Slick   |  |  Custom |
- |  (heavy)  |  |  Slider (slow) |  |  Carousel |  |   CSS   |
- +-----------+  +----------------+  +-----------+  +---------+
-                         |
-                         v
- Server Layer
- +-----------------------------------------------------------+
- |                  OpenCart 3.x (PHP)                        |
- |                                                           |
- |  &#10060; Ugly URLs: /index.php?route=product&amp;id=479          |
- |  &#10060; No SEO tools built-in                                |
- |  &#10060; No structured data / schema                          |
- |  &#10060; No CDN (Content Delivery Network)                    |
- |  &#10060; Manual everything                                    |
- +-----------------------------------------------------------+
-       |                    |                    |
-       v                    v                    v
- +-----------+      +-----------+      +------------------+
- |  Google   |      |  Social   |      |  Business Email  |
- |  Analytics|      |  Media    |      |  @gmail.com      |
- |  UA-*     |      |  FB / IG  |      |  &#9888; Unprofessional|
- |  &#10060; DEAD   |      |           |      |                  |
- |  (2023)   |      |           |      |                  |
- +-----------+      +-----------+      +------------------+
-</pre>
-    </div>
-
-    <h3>2.2 What's Broken</h3>
-    <div class="table-wrap">
-        <table>
-            <thead><tr><th>Issue</th><th>Severity</th><th>Impact</th></tr></thead>
-            <tbody>
-                <tr><td>Google Analytics is dead (UA sunset July 2023)</td><td><span class="badge-fail">CRITICAL</span></td><td>Zero visibility into traffic, sales, or behavior</td></tr>
-                <tr><td>No meta descriptions on any page</td><td><span class="badge-fail">CRITICAL</span></td><td>Google shows random text snippets</td></tr>
-                <tr><td>No structured data / schema markup</td><td><span class="badge-fail">CRITICAL</span></td><td>Invisible to AI search engines</td></tr>
-                <tr><td>Mixed HTTP / HTTPS links</td><td><span class="badge-fail">HIGH</span></td><td>Security warnings, SEO penalties</td></tr>
-                <tr><td>Ugly URL structure (<code>?route=product&amp;id=</code>)</td><td><span class="badge-fail">HIGH</span></td><td>Poor click-through, bad for SEO</td></tr>
-                <tr><td>No image lazy loading or optimization</td><td><span class="badge-fail">HIGH</span></td><td>Slow loads, high bounce rate</td></tr>
-                <tr><td>No CDN</td><td><span class="badge-fail">HIGH</span></td><td>Slow everywhere in NYC</td></tr>
-                <tr><td>Gmail for business email</td><td><span class="badge-warn">MEDIUM</span></td><td>Unprofessional to wedding clients</td></tr>
-                <tr><td>Broken sitemap (invalid timestamps)</td><td><span class="badge-warn">MEDIUM</span></td><td>Google can't properly index pages</td></tr>
-                <tr><td>All sitemap priorities set to 1.0</td><td><span class="badge-info">LOW</span></td><td>Google ignores priority signals</td></tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<!-- ════════════════════════════════════════════════════════════════ -->
-<!-- 3. SEO AUDIT                                                   -->
-<!-- ════════════════════════════════════════════════════════════════ -->
-<section class="section" id="s3">
-    <div class="section-header">
-        <span class="section-num">3</span>
-        <h2>SEO Audit Findings</h2>
-    </div>
-
-    <h3>3.1 On-Page SEO Scorecard</h3>
-    <div class="table-wrap">
-        <table>
-            <thead><tr><th>Element</th><th>Status</th><th>Notes</th></tr></thead>
-            <tbody>
-                <tr><td>Page Titles</td><td><span class="badge-fail">FAIL</span></td><td>Generic "TJ Flowers &amp; Events" on all pages. Should be keyword-rich.</td></tr>
-                <tr><td>Meta Descriptions</td><td><span class="badge-fail">FAIL</span></td><td>Completely missing on every page</td></tr>
-                <tr><td>H1 Tags</td><td><span class="badge-fail">FAIL</span></td><td>Homepage has no H1; wedding page has generic heading</td></tr>
-                <tr><td>Image Alt Text</td><td><span class="badge-warn">WEAK</span></td><td>Present but not keyword-optimized (e.g. "slidess")</td></tr>
-                <tr><td>Internal Linking</td><td><span class="badge-fail">FAIL</span></td><td>No strategic internal link structure</td></tr>
-                <tr><td>Schema Markup</td><td><span class="badge-fail">FAIL</span></td><td>Zero structured data on entire site</td></tr>
-                <tr><td>Open Graph Tags</td><td><span class="badge-fail">FAIL</span></td><td>Social shares look broken</td></tr>
-                <tr><td>Canonical Tags</td><td><span class="badge-fail">FAIL</span></td><td>Duplicate content risk</td></tr>
-                <tr><td>XML Sitemap</td><td><span class="badge-warn">WEAK</span></td><td>Invalid dates, wrong priorities, HTTP URL</td></tr>
-                <tr><td>Blog / Content</td><td><span class="badge-fail">FAIL</span></td><td>No blog, no content pages, no guides</td></tr>
-                <tr><td>URL Structure</td><td><span class="badge-fail">FAIL</span></td><td>Query-string URLs, not SEO-friendly</td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <h3>3.2 Missing Local Keywords</h3>
-    <p>These are the search terms NYC customers use every month &mdash; <strong>none appear</strong> on the current site:</p>
-    <div class="table-wrap">
-        <table>
-            <thead><tr><th>Keyword</th><th>Monthly Searches (NYC)</th><th>On Current Site?</th></tr></thead>
-            <tbody>
-                <tr><td>"florist near me"</td><td><strong>~12,000</strong></td><td><span class="badge-fail">NO</span></td></tr>
-                <tr><td>"flower delivery manhattan"</td><td><strong>~3,600</strong></td><td><span class="badge-fail">NO</span></td></tr>
-                <tr><td>"same day flower delivery NYC"</td><td><strong>~2,900</strong></td><td><span class="badge-fail">NO</span></td></tr>
-                <tr><td>"wedding florist NYC"</td><td><strong>~1,600</strong></td><td><span class="badge-fail">NO</span></td></tr>
-                <tr><td>"Upper East Side florist"</td><td><strong>~720</strong></td><td><span class="badge-fail">NO</span></td></tr>
-                <tr><td>"orchid delivery NYC"</td><td><strong>~480</strong></td><td><span class="badge-fail">NO</span></td></tr>
-                <tr><td>"funeral flowers NYC"</td><td><strong>~390</strong></td><td><span class="badge-fail">NO</span></td></tr>
-                <tr><td>"corporate flowers Manhattan"</td><td><strong>~210</strong></td><td><span class="badge-fail">NO</span></td></tr>
-                <tr><td>"flower subscription NYC"</td><td><strong>~170</strong></td><td><span class="badge-fail">NO</span></td></tr>
-                <tr><td>"event florist New York"</td><td><strong>~140</strong></td><td><span class="badge-fail">NO</span></td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <h3>3.3 Missing Pages &amp; Content</h3>
     <div class="card-grid">
-        <div class="card">
-            <h4>&#128205; Local Landing Pages</h4>
-            <ul class="checklist">
-                <li><span class="check-icon check-empty"></span> Upper East Side florist page</li>
-                <li><span class="check-icon check-empty"></span> Yorkville flower delivery page</li>
-                <li><span class="check-icon check-empty"></span> Manhattan florist page</li>
-                <li><span class="check-icon check-empty"></span> Brooklyn delivery page</li>
-                <li><span class="check-icon check-empty"></span> NJ wedding flowers page</li>
-            </ul>
-        </div>
-        <div class="card">
-            <h4>&#128221; Service Pages</h4>
-            <ul class="checklist">
-                <li><span class="check-icon check-empty"></span> Wedding flowers &amp; consultation</li>
-                <li><span class="check-icon check-empty"></span> Corporate flower service</li>
-                <li><span class="check-icon check-empty"></span> Funeral / sympathy flowers</li>
-                <li><span class="check-icon check-empty"></span> Event floral design</li>
-                <li><span class="check-icon check-empty"></span> Subscriptions &amp; recurring</li>
-            </ul>
-        </div>
-        <div class="card">
-            <h4>&#128218; Content &amp; Trust</h4>
-            <ul class="checklist">
-                <li><span class="check-icon check-empty"></span> Blog (trends, care guides, seasonal)</li>
-                <li><span class="check-icon check-empty"></span> FAQ page with schema</li>
-                <li><span class="check-icon check-empty"></span> Testimonials / reviews page</li>
-                <li><span class="check-icon check-empty"></span> About page with team bios</li>
-                <li><span class="check-icon check-empty"></span> Delivery info &amp; zones</li>
-            </ul>
-        </div>
+
+        <!-- TJ Flowers -->
+        <a href="tj-flowers/" class="audit-card card-flower">
+            <div class="card-header">
+                <div class="card-icon">&#127803;</div>
+                <div>
+                    <h2>TJ Flowers &amp; Events</h2>
+                    <small>tjflowersandevents.com</small>
+                </div>
+            </div>
+            <p class="card-desc">NYC florist since 1988 on the Upper East Side. Currently running on OpenCart with critical SEO failures, dead analytics, and zero AI search visibility. Full migration blueprint to Shopify included.</p>
+            <div class="card-tags">
+                <span class="tag" style="background: rgba(248,113,113,0.12); color: #f87171;">OpenCart</span>
+                <span class="tag" style="background: rgba(248,113,113,0.12); color: #f87171;">SEO: D-</span>
+                <span class="tag" style="background: rgba(52,211,153,0.12); color: #34d399;">Shopify Migration</span>
+                <span class="tag" style="background: rgba(96,165,250,0.12); color: #60a5fa;">E-Commerce</span>
+            </div>
+            <div class="card-footer">
+                <span class="card-date">February 2026</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+        </a>
+
+        <!-- CareK9 -->
+        <a href="carek9/" class="audit-card card-pet">
+            <div class="card-header">
+                <div class="card-icon">&#128054;</div>
+                <div>
+                    <h2>CareK9</h2>
+                    <small>carek9.com</small>
+                </div>
+            </div>
+            <p class="card-desc">Premium dog wellness e-commerce brand on Shopify (Dawn theme). Solid foundation but significant SEO and content gaps limiting growth against major pet industry competitors.</p>
+            <div class="card-tags">
+                <span class="tag" style="background: rgba(52,211,153,0.12); color: #34d399;">Shopify</span>
+                <span class="tag" style="background: rgba(251,191,36,0.12); color: #fbbf24;">SEO: C+</span>
+                <span class="tag" style="background: rgba(96,165,250,0.12); color: #60a5fa;">E-Commerce</span>
+                <span class="tag" style="background: rgba(155,141,247,0.12); color: #9b8df7;">Pet Industry</span>
+            </div>
+            <div class="card-footer">
+                <span class="card-date">February 2026</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+        </a>
+
     </div>
-</section>
-
-<!-- ════════════════════════════════════════════════════════════════ -->
-<!-- 4. GEO READINESS                                               -->
-<!-- ════════════════════════════════════════════════════════════════ -->
-<section class="section" id="s4">
-    <div class="section-header">
-        <span class="section-num">4</span>
-        <h2>GEO / AI Search Readiness</h2>
-    </div>
-
-    <p><strong>Generative Engine Optimization (GEO)</strong> is how your business appears in AI-powered search &mdash; Google AI Overviews, ChatGPT, Perplexity, Bing Copilot. These platforms now directly recommend businesses instead of showing 10 blue links.</p>
-    <p>If someone asks ChatGPT <em>"What's the best florist on the Upper East Side?"</em> &mdash; your site needs structured data for AI to find and recommend you.</p>
-
-    <h3>Schema Markup Gap Analysis</h3>
-    <div class="table-wrap">
-        <table>
-            <thead><tr><th>Schema Type</th><th>Current</th><th>Required</th><th>Purpose</th></tr></thead>
-            <tbody>
-                <tr><td>LocalBusiness</td><td><span class="badge-fail">Missing</span></td><td><span class="badge-pass">Required</span></td><td>Name, address, hours, phone, service area</td></tr>
-                <tr><td>Product</td><td><span class="badge-fail">Missing</span></td><td><span class="badge-pass">Required</span></td><td>Product names, prices, availability, images</td></tr>
-                <tr><td>Review / AggregateRating</td><td><span class="badge-fail">Missing</span></td><td><span class="badge-pass">Required</span></td><td>Star ratings in search results &amp; AI answers</td></tr>
-                <tr><td>FAQ</td><td><span class="badge-fail">Missing</span></td><td><span class="badge-pass">Required</span></td><td>AI pulls answers directly from FAQ</td></tr>
-                <tr><td>Organization</td><td><span class="badge-fail">Missing</span></td><td><span class="badge-pass">Required</span></td><td>Brand entity for Knowledge Panels</td></tr>
-                <tr><td>BreadcrumbList</td><td><span class="badge-fail">Missing</span></td><td><span class="badge-pass">Required</span></td><td>Site hierarchy for AI navigation</td></tr>
-                <tr><td>Event</td><td><span class="badge-fail">Missing</span></td><td><span class="badge-info">Nice-to-have</span></td><td>Wedding / event showcases</td></tr>
-                <tr><td>Offer</td><td><span class="badge-fail">Missing</span></td><td><span class="badge-pass">Required</span></td><td>Price, availability, delivery info</td></tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<!-- ════════════════════════════════════════════════════════════════ -->
-<!-- 5. SPEED & PERFORMANCE                                         -->
-<!-- ════════════════════════════════════════════════════════════════ -->
-<section class="section" id="s5">
-    <div class="section-header">
-        <span class="section-num">5</span>
-        <h2>Speed &amp; Performance</h2>
-    </div>
-
-    <div class="table-wrap">
-        <table>
-            <thead><tr><th>Issue</th><th>Impact</th><th>Fix on Shopify</th></tr></thead>
-            <tbody>
-                <tr><td>No CDN</td><td>+2-4s load time</td><td><span class="badge-pass">Global CDN included</span></td></tr>
-                <tr><td>Revolution Slider (heavy JS/CSS)</td><td>+1-2s load time</td><td><span class="badge-pass">Lightweight hero section</span></td></tr>
-                <tr><td>No image compression</td><td>+1-3s load time</td><td><span class="badge-pass">Auto-optimized</span></td></tr>
-                <tr><td>No lazy loading</td><td>+1-2s load time</td><td><span class="badge-pass">Built into themes</span></td></tr>
-                <tr><td>jQuery + Slick + plugins</td><td>+0.5-1s</td><td><span class="badge-pass">Vanilla JS in modern themes</span></td></tr>
-                <tr><td>No browser caching</td><td>Repeat visits slow</td><td><span class="badge-pass">Auto-handled</span></td></tr>
-                <tr><td>No WebP/AVIF images</td><td>2-3x larger files</td><td><span class="badge-pass">Auto-converted</span></td></tr>
-                <tr><td>Self-hosted (no auto-scaling)</td><td>Crashes on busy days</td><td><span class="badge-pass">99.9% uptime SLA</span></td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="card" style="margin-top: 1.5rem; border-left: 3px solid var(--amber);">
-        <h4 style="color: var(--amber);">Why Speed Matters for a Florist</h4>
-        <p>53% of mobile users leave if a page takes &gt;3 seconds. Valentine's Day traffic spikes can crash self-hosted stores. Google uses Core Web Vitals as a direct ranking factor. Shopify stores average 1.2-1.8s load times vs 4-6s for OpenCart.</p>
-    </div>
-</section>
-
-<!-- ════════════════════════════════════════════════════════════════ -->
-<!-- 6. COMPETITOR LANDSCAPE                                        -->
-<!-- ════════════════════════════════════════════════════════════════ -->
-<section class="section" id="s6">
-    <div class="section-header">
-        <span class="section-num">6</span>
-        <h2>Competitor Landscape</h2>
-    </div>
-
-    <div class="table-wrap">
-        <table>
-            <thead><tr><th>Florist</th><th>Platform</th><th>Rating</th><th>Est.</th><th>Key Strength</th></tr></thead>
-            <tbody>
-                <tr><td><strong>UrbanStems</strong></td><td><span class="badge-pass">Shopify Plus</span></td><td>4.6&#9733;</td><td>2014</td><td>Modern UX, national reach, subscriptions</td></tr>
-                <tr><td><strong>Starbright Floral</strong></td><td><span class="badge-info">Custom / WP</span></td><td>4.5&#9733;</td><td>1994</td><td>384 reviews, corporate, 30+ years</td></tr>
-                <tr><td><strong>Plantshed</strong></td><td><span class="badge-info">BloomNation</span></td><td>4.3&#9733;</td><td>1950s</td><td>Multi-location, deep NYC roots</td></tr>
-                <tr><td><strong>Scotts Flowers NYC</strong></td><td><span class="badge-pass">Shopify</span></td><td>4.4&#9733;</td><td>1947</td><td>Clean site, strong local SEO</td></tr>
-                <tr><td><strong>Designs by Ahn</strong></td><td><span class="badge-pass">Shopify</span></td><td>4.7&#9733;</td><td>2010</td><td>High-end weddings, celebrity clients</td></tr>
-                <tr style="background: var(--red-dim);"><td><strong>TJ Flowers &amp; Events</strong></td><td><span class="badge-fail">OpenCart</span></td><td>3.8&#9733;</td><td>1988</td><td>38 years experience, but invisible online</td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="card" style="border-left: 3px solid var(--green);">
-        <h4 style="color: var(--green);">UrbanStems Case Study: Salesforce &rarr; Shopify</h4>
-        <p>UrbanStems migrated from Salesforce Commerce Cloud to Shopify Plus and published results:</p>
-        <div class="stat-grid" style="margin-top: 1rem;">
-            <div class="stat-box"><div class="stat-value" style="color: var(--green);">+8%</div><div class="stat-label">Avg Order Value (YoY)</div></div>
-            <div class="stat-box"><div class="stat-value" style="color: var(--green);">+7%</div><div class="stat-label">Subscription Growth</div></div>
-            <div class="stat-box"><div class="stat-value" style="color: var(--green);">+11%</div><div class="stat-label">New Subscriptions</div></div>
-            <div class="stat-box"><div class="stat-value" style="color: var(--green);">-15%</div><div class="stat-label">Total Cost of Ownership</div></div>
-        </div>
-    </div>
-</section>
-
-<!-- ════════════════════════════════════════════════════════════════ -->
-<!-- 7. PLATFORM RECOMMENDATION                                     -->
-<!-- ════════════════════════════════════════════════════════════════ -->
-<section class="section" id="s7">
-    <div class="section-header">
-        <span class="section-num">7</span>
-        <h2>Platform Recommendation</h2>
-    </div>
-
-    <h3>SEO Platform Rankings (2026 Industry Data)</h3>
-    <div class="card">
-        <div class="score-row">
-            <span class="score-label">#1 Shopify</span>
-            <div class="score-bar"><div class="score-fill" style="width:93%; background: linear-gradient(90deg, var(--accent), var(--green));"></div></div>
-            <span class="score-val" style="color: var(--green);">37/40</span>
-        </div>
-        <div class="score-row">
-            <span class="score-label">#2 WooCommerce</span>
-            <div class="score-bar"><div class="score-fill" style="width:78%; background: linear-gradient(90deg, var(--accent), var(--blue));"></div></div>
-            <span class="score-val" style="color: var(--blue);">31/40</span>
-        </div>
-        <div class="score-row">
-            <span class="score-label">#3 BigCommerce</span>
-            <div class="score-bar"><div class="score-fill" style="width:70%; background: linear-gradient(90deg, var(--accent), var(--blue));"></div></div>
-            <span class="score-val" style="color: var(--blue);">28/40</span>
-        </div>
-        <div class="score-row">
-            <span class="score-label">#4 Floranext</span>
-            <div class="score-bar"><div class="score-fill" style="width:63%; background: linear-gradient(90deg, var(--amber), var(--amber));"></div></div>
-            <span class="score-val" style="color: var(--amber);">25/40</span>
-        </div>
-        <div class="score-row">
-            <span class="score-label">#5 Wix</span>
-            <div class="score-bar"><div class="score-fill" style="width:55%; background: linear-gradient(90deg, var(--amber), var(--amber));"></div></div>
-            <span class="score-val" style="color: var(--amber);">22/40</span>
-        </div>
-        <div class="score-row">
-            <span class="score-label">OpenCart (you)</span>
-            <div class="score-bar"><div class="score-fill" style="width:35%; background: linear-gradient(90deg, var(--red), var(--red));"></div></div>
-            <span class="score-val" style="color: var(--red);">14/40</span>
-        </div>
-    </div>
-
-    <h3>Detailed Comparison</h3>
-    <div class="table-wrap">
-        <table>
-            <thead><tr><th>Factor</th><th>Shopify</th><th>WooCommerce</th><th>Floranext</th><th>OpenCart</th></tr></thead>
-            <tbody>
-                <tr><td>SEO Power</td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;</span><span class="stars-dim">&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;</span><span class="stars-dim">&#9733;&#9733;&#9733;&#9733;</span></td></tr>
-                <tr><td>GEO Ready</td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;</span><span class="stars-dim">&#9733;</span></td><td><span class="stars">&#9733;&#9733;</span><span class="stars-dim">&#9733;&#9733;&#9733;</span></td><td><span class="stars-dim">&#9733;&#9733;&#9733;&#9733;&#9733;</span></td></tr>
-                <tr><td>Ease of Use</td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;</span><span class="stars-dim">&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;</span><span class="stars-dim">&#9733;</span></td><td><span class="stars">&#9733;&#9733;</span><span class="stars-dim">&#9733;&#9733;&#9733;</span></td></tr>
-                <tr><td>Speed</td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;</span><span class="stars-dim">&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;</span><span class="stars-dim">&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;</span><span class="stars-dim">&#9733;&#9733;&#9733;</span></td></tr>
-                <tr><td>Florist Tools</td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;</span><span class="stars-dim">&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;</span><span class="stars-dim">&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;</span><span class="stars-dim">&#9733;&#9733;&#9733;</span></td></tr>
-                <tr><td>Maintenance</td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;</span><span class="stars-dim">&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;</span><span class="stars-dim">&#9733;&#9733;&#9733;&#9733;</span></td></tr>
-                <tr><td>Scalability</td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;</span><span class="stars-dim">&#9733;</span></td><td><span class="stars">&#9733;&#9733;</span><span class="stars-dim">&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;</span><span class="stars-dim">&#9733;&#9733;&#9733;</span></td></tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<!-- ════════════════════════════════════════════════════════════════ -->
-<!-- 8. SHOPIFY ARCHITECTURE BLUEPRINT                              -->
-<!-- ════════════════════════════════════════════════════════════════ -->
-<section class="section" id="s8">
-    <div class="section-header">
-        <span class="section-num">8</span>
-        <h2>Shopify Architecture Blueprint</h2>
-    </div>
-
-    <h3>8.1 Full System Architecture</h3>
-    <div class="diagram">
-<pre>
- &#9733; TJ FLOWERS &amp; EVENTS &mdash; SHOPIFY ARCHITECTURE &#9733;
- =====================================================
-
-           CUSTOMER TOUCHPOINTS
-  +----------+  +----------+  +----------+  +----------+
-  | Website  |  | Instagram|  | Facebook |  |  Google  |
-  | Desktop  |  |   Shop   |  |   Shop   |  | Shopping |
-  | &amp; Mobile |  |          |  |          |  |   Feed   |
-  +----+-----+  +----+-----+  +----+-----+  +----+-----+
-       |             |             |              |
-       +------+------+------+-----+------+-------+
-              |                    |
-              v                    v
-  +----------------------------------------------------------+
-  |                                                          |
-  |              SHOPIFY CORE PLATFORM                       |
-  |              ($39/month Basic Plan)                      |
-  |                                                          |
-  |  +----------------+ +----------------+ +---------------+ |
-  |  | Product Catalog | | Order Mgmt    | | Customer DB   | |
-  |  |   ~400 items   | |               | |               | |
-  |  +----------------+ +----------------+ +---------------+ |
-  |                                                          |
-  |  +----------------+ +----------------+ +---------------+ |
-  |  | Shopify        | | Secure         | | Built-in      | |
-  |  | Payments       | | Checkout       | | Blog (SEO)    | |
-  |  | + PayPal       | | Apple/Google   | |               | |
-  |  +----------------+ +----------------+ +---------------+ |
-  |                                                          |
-  |  INCLUDED: SSL, Global CDN, 99.9% uptime, auto-backups  |
-  |            Mobile-first themes, auto image optimization  |
-  +-----+----------------------------+----------------------+
-        |                            |
-        v                            v
-  +---------------------------+  +----------------------------+
-  |  &#128205; LOCAL DELIVERY &amp;       |  |  &#128270; SEO &amp; GEO               |
-  |     OPERATIONS             |  |     (AI SEARCH VISIBILITY)  |
-  |                           |  |                            |
-  |  Zapiet ($29/mo)          |  |  JSON-LD for SEO ($9.99/mo)|
-  |  +-- NYC delivery zones   |  |  +-- Product schema        |
-  |  +-- Same-day cutoff 12pm |  |  +-- LocalBusiness schema  |
-  |  +-- Date &amp; time picker   |  |  +-- FAQ schema            |
-  |  +-- In-store pickup      |  |  +-- Review schema         |
-  |      1640 York Ave        |  |  +-- Breadcrumb schema     |
-  |                           |  |  +-- Organization schema   |
-  |  Shopify POS (included)   |  |                            |
-  |  +-- In-store register    |  |  SEO Manager ($20/mo)      |
-  |  +-- Synced inventory     |  |  +-- Meta title/desc editor|
-  |  +-- Walk-in customers    |  |  +-- 301 redirect manager  |
-  |                           |  |  +-- Broken link scanner   |
-  +---------------------------+  +----------------------------+
-        |                            |
-        v                            v
-  +---------------------------+  +----------------------------+
-  |  &#11088; REVIEWS &amp;              |  |  &#128231; MARKETING &amp;            |
-  |     SOCIAL PROOF           |  |     CUSTOMER RETENTION     |
-  |                           |  |                            |
-  |  Judge.me (free)          |  |  Klaviyo (free &lt;250)       |
-  |  +-- Auto review requests |  |  +-- Email campaigns       |
-  |  +-- Photo reviews        |  |  +-- SMS marketing         |
-  |  +-- Schema for Google    |  |  +-- Abandoned cart recovery|
-  |  +-- Star ratings in SERP |  |  +-- Valentine's Day blasts|
-  |  +-- Import existing      |  |  +-- Mother's Day reminders|
-  |                           |  |  +-- Birthday automation   |
-  |  Instafeed (free)         |  |                            |
-  |  +-- IG feed on site      |  |  Shopify Email (free tier) |
-  |  +-- Social proof         |  |  +-- Built-in newsletters  |
-  +---------------------------+  +----------------------------+
-        |                            |
-        v                            v
-  +---------------------------+  +----------------------------+
-  |  &#128202; ANALYTICS &amp;            |  |  &#127800; FLORIST-SPECIFIC       |
-  |     TRACKING               |  |     FEATURES               |
-  |                           |  |                            |
-  |  Google Analytics 4 (free)|  |  Gift Message (built-in)   |
-  |  +-- Traffic &amp; behavior   |  |  +-- Card message at       |
-  |  +-- Conversion tracking  |  |      checkout              |
-  |  +-- Audience insights    |  |                            |
-  |                           |  |  PageFly (free tier)       |
-  |  Meta Pixel (free)        |  |  +-- Wedding packages page |
-  |  +-- FB/IG retargeting    |  |  +-- Seasonal promo pages  |
-  |  +-- Lookalike audiences  |  |  +-- Neighborhood SEO pages|
-  |                           |  |                            |
-  |  Google Search Console    |  |  Google Shopping Channel   |
-  |  +-- Index monitoring     |  |  +-- Product feed to Google|
-  |  +-- Crawl error alerts   |  |  +-- Free product listings |
-  +---------------------------+  +----------------------------+
-              |
-              v
-  +----------------------------------------------------------+
-  |                 EXTERNAL INTEGRATIONS                     |
-  |                                                          |
-  |  +-------------+ +-------------+ +---------+ +---------+|
-  |  | Google      | | Google      | | Instagram| | Pro     ||
-  |  | Business    | | Shopping    | | @tj      | | Email   ||
-  |  | Profile     | | Merchant   | | flowers  | | info@   ||
-  |  | (local SEO) | | Center     | | nyc      | | tj...com||
-  |  +-------------+ +-------------+ +---------+ +---------+|
-  +----------------------------------------------------------+
-</pre>
-    </div>
-
-    <h3>8.2 Customer Journey Flow</h3>
-    <div class="diagram">
-<pre>
-  CUSTOMER JOURNEY (NEW)
-  ======================
-
-  Customer searches                   Customer browses
-  "florist near me NYC"               Instagram / Facebook
-         |                                    |
-         v                                    v
-  +--------------+                  +-------------------+
-  | Google Search|                  | Social Media Shop |
-  | (SEO + GEO) |                  | (Shoppable Posts) |
-  +------+-------+                  +--------+----------+
-         |                                    |
-         |   +---------------------------+    |
-         |   | Google AI Overview        |    |
-         |   | "TJ Flowers &amp; Events     |    |
-         |   |  is a highly rated        |    |
-         |   |  florist on the Upper     |    |
-         |   |  East Side..."            |    |
-         |   |  &#9733;&#9733;&#9733;&#9733;&#9733;                  |    |
-         |   +--------------+------------+    |
-         |                  |                  |
-         v                  v                  v
-  +----------------------------------------------+
-  |                                              |
-  |      tjflowersandevents.com                  |
-  |      (Shopify &mdash; Fast, Mobile-First)         |
-  |                                              |
-  |  +----------------------------------------+ |
-  |  |       OPTIMIZED PRODUCT PAGE            | |
-  |  |                                        | |
-  |  |  &#9679; Beautiful hero image (WebP, lazy)   | |
-  |  |  &#9679; SEO-rich title + description        | |
-  |  |  &#9679; Price + availability (schema)       | |
-  |  |  &#9679; Customer reviews (schema)           | |
-  |  |  &#9679; Delivery date picker (Zapiet)       | |
-  |  |  &#9679; Gift message field                  | |
-  |  |  &#9679; "Add to Cart" CTA                   | |
-  |  |  &#9679; Related products                    | |
-  |  +----------------------------------------+ |
-  |                   |                          |
-  |                   v                          |
-  |  +----------------------------------------+ |
-  |  |           CHECKOUT                      | |
-  |  |                                        | |
-  |  |  &#9679; Shopify Payments (Cards)           | |
-  |  |  &#9679; PayPal / Apple Pay / Google Pay    | |
-  |  |  &#9679; Delivery zone validation           | |
-  |  |  &#9679; Same-day delivery option           | |
-  |  |  &#9679; Gift message confirmation          | |
-  |  +----------------------------------------+ |
-  |                   |                          |
-  +-------------------+--------------------------+
-                      |
-                      v
-         +---------------------------+
-         |      POST-PURCHASE        |
-         |                           |
-         |  Klaviyo sends:           |
-         |  &#9679; Order confirmation     |
-         |  &#9679; Delivery notification  |
-         |  &#9679; "How were flowers?"   |
-         |  &#9679; Review request         |
-         |  &#9679; "Order again?" reminder|
-         |  &#9679; Valentine's Day promo  |
-         |  &#9679; Mother's Day reminder  |
-         +---------------------------+
-</pre>
-    </div>
-
-    <h3>8.3 SEO Site Structure (New)</h3>
-    <div class="diagram">
-<pre>
-  tjflowersandevents.com
-  |
-  +-- / (Homepage)
-  |   "NYC Florist | Same-Day Flower Delivery | TJ Flowers &amp; Events"
-  |
-  +-- /collections/
-  |   +-- /valentines-day       "Valentine's Day Flowers NYC"
-  |   +-- /mothers-day          "Mother's Day Flowers NYC"
-  |   +-- /roses                "Rose Arrangements NYC Delivery"
-  |   +-- /orchids              "Orchid Plants NYC"
-  |   +-- /succulents           "Succulent Plants NYC"
-  |   +-- /sympathy             "Sympathy &amp; Funeral Flowers NYC"
-  |   +-- /corporate            "Corporate Flower Service Manhattan"
-  |   +-- /seasonal             "Seasonal Flower Arrangements"
-  |
-  +-- /products/
-  |   +-- /2-dozen-red-roses    (SEO-friendly product URLs)
-  |   +-- /white-orchid-plant
-  |   +-- /...400 products
-  |
-  +-- /pages/
-  |   +-- /about                "About TJ Flowers | NYC Florist Since 1988"
-  |   +-- /wedding-events       "Wedding Florist NYC | Event Flowers"
-  |   +-- /delivery-info        "Same-Day Flower Delivery Manhattan &amp; NYC"
-  |   +-- /contact              "Contact TJ Flowers | Upper East Side"
-  |   +-- /gallery              "Floral Design Gallery"
-  |   +-- /faq                  "Frequently Asked Questions"
-  |
-  +-- /blogs/
-  |   +-- /wedding-flower-trends-2026
-  |   +-- /how-to-care-for-orchids
-  |   +-- /best-flowers-for-nyc-apartments
-  |   +-- /...ongoing content
-  |
-  +-- /neighborhoods/  (PageFly landing pages for local SEO)
-      +-- /upper-east-side-florist
-      +-- /yorkville-flower-delivery
-      +-- /manhattan-florist
-      +-- /brooklyn-flower-delivery
-      +-- /new-jersey-wedding-flowers
-</pre>
-    </div>
-
-    <h3>8.4 Recommended Shopify App Stack</h3>
-    <div class="table-wrap">
-        <table>
-            <thead><tr><th>App</th><th>Purpose</th><th>Cost</th><th>Priority</th></tr></thead>
-            <tbody>
-                <tr><td><strong>JSON-LD for SEO</strong></td><td>Auto-generates all schema types (GEO critical)</td><td>$9.99/mo</td><td><span class="badge-fail">Must-have</span></td></tr>
-                <tr><td><strong>SEO Manager</strong></td><td>Meta tags, redirects, broken link scanner</td><td>$20/mo</td><td><span class="badge-fail">Must-have</span></td></tr>
-                <tr><td><strong>Zapiet Pickup + Delivery</strong></td><td>NYC delivery zones, same-day cutoffs, store pickup</td><td>$29/mo</td><td><span class="badge-fail">Must-have</span></td></tr>
-                <tr><td><strong>Judge.me</strong></td><td>Product reviews with schema markup</td><td>Free</td><td><span class="badge-fail">Must-have</span></td></tr>
-                <tr><td><strong>Klaviyo</strong></td><td>Email + SMS marketing, automations</td><td>Free (&lt;250)</td><td><span class="badge-warn">High</span></td></tr>
-                <tr><td><strong>Instafeed</strong></td><td>Instagram feed on website</td><td>Free</td><td><span class="badge-warn">High</span></td></tr>
-                <tr><td><strong>PageFly</strong></td><td>Landing pages for neighborhoods &amp; promotions</td><td>Free (3 pg)</td><td><span class="badge-warn">High</span></td></tr>
-                <tr><td><strong>Google &amp; YouTube Channel</strong></td><td>Google Shopping product feed</td><td>Free</td><td><span class="badge-info">Recommended</span></td></tr>
-                <tr><td><strong>Shopify POS</strong></td><td>In-store point of sale system</td><td>Included</td><td><span class="badge-info">Recommended</span></td></tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<!-- ════════════════════════════════════════════════════════════════ -->
-<!-- 9. MIGRATION ROADMAP                                           -->
-<!-- ════════════════════════════════════════════════════════════════ -->
-<section class="section" id="s9">
-    <div class="section-header">
-        <span class="section-num">9</span>
-        <h2>Migration Roadmap</h2>
-    </div>
-
-    <div class="timeline">
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <h4>Phase 1: Foundation</h4>
-            <div class="timeline-meta">Week 1&ndash;2</div>
-            <ul class="checklist">
-                <li><span class="check-icon check-empty"></span> Back up entire OpenCart store (database + files)</li>
-                <li><span class="check-icon check-empty"></span> Create Shopify account (Basic $39/mo)</li>
-                <li><span class="check-icon check-empty"></span> Install migration tool (Cart2Cart $79&ndash;139 or LitExtension)</li>
-                <li><span class="check-icon check-empty"></span> Run data migration (products, customers, orders)</li>
-                <li><span class="check-icon check-empty"></span> Verify all 400 products transferred correctly</li>
-                <li><span class="check-icon check-empty"></span> Set up professional email (info@tjflowersandevents.com)</li>
-            </ul>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <h4>Phase 2: Design &amp; Setup</h4>
-            <div class="timeline-meta">Week 2&ndash;3</div>
-            <ul class="checklist">
-                <li><span class="check-icon check-empty"></span> Choose &amp; customize a florist-friendly Shopify theme</li>
-                <li><span class="check-icon check-empty"></span> Organize products into collections</li>
-                <li><span class="check-icon check-empty"></span> Set up Shopify Payments + PayPal + Apple Pay</li>
-                <li><span class="check-icon check-empty"></span> Configure NYC delivery zones (Zapiet)</li>
-                <li><span class="check-icon check-empty"></span> Set same-day delivery cutoff (12pm EST)</li>
-                <li><span class="check-icon check-empty"></span> Enable in-store pickup (1640 York Ave)</li>
-                <li><span class="check-icon check-empty"></span> Connect domain (tjflowersandevents.com)</li>
-            </ul>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-dot" style="background: var(--red);"></div>
-            <h4>Phase 3: SEO &amp; GEO <span class="badge-fail" style="margin-left: 8px;">MOST IMPORTANT</span></h4>
-            <div class="timeline-meta">Week 3</div>
-            <ul class="checklist">
-                <li><span class="check-icon check-empty"></span> Install JSON-LD for SEO &amp; SEO Manager apps</li>
-                <li><span class="check-icon check-empty"></span> Write meta titles for all pages &amp; products</li>
-                <li><span class="check-icon check-empty"></span> Write meta descriptions for all pages</li>
-                <li><span class="check-icon check-empty"></span> Set up 301 redirects (ALL old OpenCart URLs)</li>
-                <li><span class="check-icon check-empty"></span> Add image alt text with keywords</li>
-                <li><span class="check-icon check-empty"></span> Create FAQ page with schema</li>
-                <li><span class="check-icon check-empty"></span> Create neighborhood landing pages</li>
-                <li><span class="check-icon check-empty"></span> Submit new sitemap to Google Search Console</li>
-                <li><span class="check-icon check-empty"></span> Verify all schema markup (Google Rich Results Test)</li>
-            </ul>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <h4>Phase 4: Marketing Setup</h4>
-            <div class="timeline-meta">Week 3&ndash;4</div>
-            <ul class="checklist">
-                <li><span class="check-icon check-empty"></span> Set up Google Analytics 4</li>
-                <li><span class="check-icon check-empty"></span> Install Meta Pixel</li>
-                <li><span class="check-icon check-empty"></span> Set up Klaviyo (email + SMS)</li>
-                <li><span class="check-icon check-empty"></span> Create abandoned cart email flow</li>
-                <li><span class="check-icon check-empty"></span> Install Judge.me for reviews</li>
-                <li><span class="check-icon check-empty"></span> Connect Instagram &amp; Facebook shops</li>
-                <li><span class="check-icon check-empty"></span> Set up Google Shopping feed</li>
-                <li><span class="check-icon check-empty"></span> Optimize Google Business Profile</li>
-            </ul>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-dot" style="background: var(--green);"></div>
-            <h4>Phase 5: Test &amp; Launch</h4>
-            <div class="timeline-meta">Week 4</div>
-            <ul class="checklist">
-                <li><span class="check-icon check-empty"></span> Test full checkout flow</li>
-                <li><span class="check-icon check-empty"></span> Test all delivery zones</li>
-                <li><span class="check-icon check-empty"></span> Test on mobile (iPhone + Android)</li>
-                <li><span class="check-icon check-empty"></span> Test all 301 redirects</li>
-                <li><span class="check-icon check-empty"></span> Verify all schema markup</li>
-                <li><span class="check-icon check-empty"></span> Run PageSpeed Insights test</li>
-                <li><span class="check-icon check-empty"></span> Remove password &rarr; GO LIVE</li>
-                <li><span class="check-icon check-empty"></span> Disable old OpenCart store</li>
-                <li><span class="check-icon check-empty"></span> Monitor for 2 weeks</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<!-- ════════════════════════════════════════════════════════════════ -->
-<!-- 10. BUDGET ESTIMATE                                            -->
-<!-- ════════════════════════════════════════════════════════════════ -->
-<section class="section" id="s10">
-    <div class="section-header">
-        <span class="section-num">10</span>
-        <h2>Budget Estimate</h2>
-    </div>
-
-    <h3>One-Time Migration Costs</h3>
-    <div class="table-wrap">
-        <table>
-            <thead><tr><th>Item</th><th>DIY</th><th>With Agency</th></tr></thead>
-            <tbody>
-                <tr><td>Migration tool (Cart2Cart / LitExtension)</td><td>$79 &ndash; $139</td><td>Included</td></tr>
-                <tr><td>Shopify theme (premium, optional)</td><td>$0 &ndash; $180</td><td>Included</td></tr>
-                <tr><td>Professional email setup</td><td>$0 &ndash; $72/yr</td><td>Included</td></tr>
-                <tr><td>Agency migration fee</td><td>&mdash;</td><td>$1,500 &ndash; $3,000</td></tr>
-                <tr style="background: var(--surface2);"><td><strong>Total One-Time</strong></td><td><strong>$79 &ndash; $391</strong></td><td><strong>$1,500 &ndash; $3,000</strong></td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <h3>Monthly Ongoing Costs</h3>
-    <div class="table-wrap">
-        <table>
-            <thead><tr><th>Item</th><th>Cost / Month</th><th>Notes</th></tr></thead>
-            <tbody>
-                <tr><td>Shopify Basic plan</td><td>$39.00</td><td>Hosting, SSL, CDN included</td></tr>
-                <tr><td>Zapiet (delivery zones)</td><td>$29.00</td><td>Essential for NYC delivery</td></tr>
-                <tr><td>SEO Manager app</td><td>$20.00</td><td>Can downgrade later</td></tr>
-                <tr><td>JSON-LD for SEO</td><td>$9.99</td><td>Schema markup</td></tr>
-                <tr><td>Judge.me reviews</td><td>$0.00</td><td>Free tier</td></tr>
-                <tr><td>Klaviyo email</td><td>$0.00</td><td>Free under 250 contacts</td></tr>
-                <tr><td>Instafeed</td><td>$0.00</td><td>Free tier</td></tr>
-                <tr><td>PageFly</td><td>$0.00</td><td>Free tier (3 pages)</td></tr>
-                <tr><td>Google Analytics 4</td><td>$0.00</td><td>Free</td></tr>
-                <tr><td>Meta Pixel</td><td>$0.00</td><td>Free</td></tr>
-                <tr style="background: var(--surface2);"><td><strong>Total Monthly</strong></td><td><strong>~$98</strong></td><td></td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <h3>Annual Comparison</h3>
-    <div class="stat-grid">
-        <div class="stat-box" style="border-color: var(--red);">
-            <div class="stat-value" style="color: var(--red);">$600&ndash;2k</div>
-            <div class="stat-label">OpenCart (Current Est. Annual)<br><small style="color: var(--red);">+ hidden costs: crashes, security, lost sales</small></div>
-        </div>
-        <div class="stat-box" style="border-color: var(--green);">
-            <div class="stat-value" style="color: var(--green);">~$1,176</div>
-            <div class="stat-label">Shopify (New Annual)<br><small style="color: var(--green);">Predictable, no surprises</small></div>
-        </div>
-    </div>
-</section>
-
-<!-- ── Schema Markup Examples ─────────────────────────────────── -->
-<section class="section" id="schema">
-    <h3>Appendix: What AI Search Engines Will See (After Migration)</h3>
-
-    <div class="card">
-        <h4 style="color: var(--accent-light);">LocalBusiness Schema (auto-generated)</h4>
-        <div class="diagram">
-<pre style="color: var(--green);">{
-  "@context": "https://schema.org",
-  "@type": "Florist",
-  "name": "TJ Flowers &amp; Events",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "1640 York Ave",
-    "addressLocality": "New York",
-    "addressRegion": "NY",
-    "postalCode": "10028"
-  },
-  "telephone": "(212) 628-1214",
-  "openingHours": ["Mo-Fr 08:00-19:00", "Sa 08:00-19:00", "Su 10:00-18:00"],
-  "priceRange": "$$",
-  "areaServed": ["Manhattan", "Brooklyn", "Queens", "New Jersey"]
-}</pre>
-        </div>
-    </div>
-
-    <div class="card">
-        <h4 style="color: var(--accent-light);">Product Schema (auto-generated per product)</h4>
-        <div class="diagram">
-<pre style="color: var(--blue);">{
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "2 Dozen Red Roses in Glass Vase",
-  "description": "Stunning arrangement of 24 premium red roses...",
-  "offers": {
-    "@type": "Offer",
-    "price": "150.00",
-    "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock",
-    "deliveryLeadTime": { "value": "0", "unitCode": "DAY" }
-  },
-  "aggregateRating": {
-    "ratingValue": "4.8",
-    "reviewCount": "47"
-  }
-}</pre>
-        </div>
-    </div>
-</section>
-
-<!-- ── Footer ─────────────────────────────────────────────────── -->
-<footer class="footer">
-    <p>TJ Flowers &amp; Events &mdash; Website Audit &amp; Migration Report &mdash; February 2026</p>
-    <p style="margin-top: 0.5rem;">Prepared with data from Shopify, SearchFlex, ARC Intermedia, Magneto IT Solutions, Aureate Labs, Cart2Cart, LitExtension, WooCommerce, and Schema.org</p>
-</footer>
-
 </main>
+
+<footer class="footer">
+    <p>Site Audits &mdash; SEO, GEO &amp; Performance Reports &mdash; 2026</p>
+</footer>
 
 </body>
 </html>
