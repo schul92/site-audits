@@ -1,0 +1,347 @@
+{
+  "site": "https://www.tjflowersandevents.com",
+  "scraped_date": "2026-02-08",
+  "homepage": {
+    "hero_slider_images": [
+      "https://www.tjflowersandevents.com/image/catalog/slider/shop_succulents.jpg",
+      "https://www.tjflowersandevents.com/image/catalog/slider/welcometo_our_store_tjflowersandevent.jpg",
+      "https://www.tjflowersandevents.com/image/catalog/slider/slide-1_flowers.jpg"
+    ],
+    "featured_products": [
+      {
+        "name": "TJFlowers_VD001 - 2 Dozen Red Roses in a Glass Vase",
+        "price": "$275.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/Flowers/TJFlowers_526x660_valentinesday001-526x660.jpg",
+        "description": "2 dozen Red Roses in a Vase",
+        "category": "Homepage Featured / Valentines"
+      },
+      {
+        "name": "TJFlowers_VD002 - 1 Dozen Red Roses in a Glass Vase",
+        "price": "$150.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/Flowers/TJFlowers_526x660_valentinesday002-526x660.jpg",
+        "description": "1 Dozen Red Roses in a glass vase",
+        "category": "Homepage Featured / Valentines"
+      },
+      {
+        "name": "TJFlowers_VD005 - Red Roses and Vanda Orchids",
+        "price": "$200.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/Flowers/TJFlowers_526x660_VT005_Red-Roses-and-Vanda-Orchids-526x660.jpg",
+        "description": "Red Roses and Vanda Orchids",
+        "category": "Homepage Featured / Valentines"
+      },
+      {
+        "name": "TJFlowers_VD008 - Pink Sweet Heart",
+        "price": "$150.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/Flowers/TJFlowers_526x660_VT008_Pink-Sweet-Heart-526x660.jpg",
+        "description": "Pink Sweet Heart",
+        "category": "Homepage Featured / Valentines"
+      },
+      {
+        "name": "TJFlowers_VD009 - Hot Pink and Orchid",
+        "price": "$200.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/Flowers/TJFlowers_526x660_VT009_Hot-Pink-and-Orchid-526x660.jpg",
+        "description": "Hot Pink and Orchid",
+        "category": "Homepage Featured / Valentines"
+      },
+      {
+        "name": "TJflowers valentines 21001",
+        "price": "$200.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/image000001-526x660.jpg",
+        "description": null,
+        "category": "Homepage Featured / Valentines"
+      },
+      {
+        "name": "TJflowers valentines 21002",
+        "price": "$300.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/image000002 (1)-526x660.jpg",
+        "description": null,
+        "category": "Homepage Featured / Valentines"
+      },
+      {
+        "name": "TJflowers valentines 21003",
+        "price": "$300.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/image000002 (2)-526x660.jpg",
+        "description": null,
+        "category": "Homepage Featured / Valentines"
+      },
+      {
+        "name": "TJflowers valentines 21004",
+        "price": "$300.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/image000002 (4)-526x660.jpg",
+        "description": null,
+        "category": "Homepage Featured / Valentines"
+      },
+      {
+        "name": "TJflowers valentines 21005",
+        "price": "$250.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/image000005-526x660.jpg",
+        "description": null,
+        "category": "Homepage Featured / Valentines"
+      },
+      {
+        "name": "TJflowers 21006",
+        "price": "$150.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/image000006-526x660.jpg",
+        "description": null,
+        "category": "Homepage Featured / Valentines"
+      },
+      {
+        "name": "TJflowers valentines 21007",
+        "price": "$250.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/image000007-526x660.jpg",
+        "description": null,
+        "category": "Homepage Featured / Valentines"
+      },
+      {
+        "name": "TJFlowers 0001",
+        "price": "$200.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/TJFlowers_526x660_001_1-526x660.jpg",
+        "description": "Pictures are for reference only. All arrangements subject to seasonal availability",
+        "category": "Homepage Featured / Standard Flowers"
+      },
+      {
+        "name": "TJFlowers 0009",
+        "price": "$200.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/TJFlowers_526x660_009_1-526x660.jpg",
+        "description": "Pictures are for reference only. All arrangements subject to seasonal availability",
+        "category": "Homepage Featured / Standard Flowers"
+      },
+      {
+        "name": "Tjflowers 0153",
+        "price": "$225.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/Flowers/TJFlowers_526x600_153_1-526x660.jpg",
+        "description": "Pictures are for reference only. All arrangements subject to seasonal availability",
+        "category": "Homepage Featured / Standard Flowers"
+      },
+      {
+        "name": "TJFlowers 0077",
+        "price": "$350.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Plants/TJFlowers_526x660_orchid_006_01-526x660.jpg",
+        "description": null,
+        "category": "Homepage Featured / Plants"
+      },
+      {
+        "name": "TJFlowers 0078",
+        "price": "$350.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Plants/TJFlowers_526x660_orchid_014_01-526x660.jpg",
+        "description": null,
+        "category": "Homepage Featured / Plants"
+      },
+      {
+        "name": "TJFlowers 0079",
+        "price": "$200.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Plants/TJFlowers_526x660_orchid_020_01-526x660.jpg",
+        "description": null,
+        "category": "Homepage Featured / Plants"
+      },
+      {
+        "name": "TJFlowers 0069",
+        "price": "$150.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_042_01-526x660.jpg",
+        "description": null,
+        "category": "Homepage Featured / Orchids"
+      },
+      {
+        "name": "TJFlowers 0065",
+        "price": "$250.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_038_01-526x660.jpg",
+        "description": null,
+        "category": "Homepage Featured / Orchids"
+      },
+      {
+        "name": "TJFlowers 0070",
+        "price": "$300.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_043_01-526x660.jpg",
+        "description": null,
+        "category": "Homepage Featured / Orchids"
+      },
+      {
+        "name": "TJFlowers 0071",
+        "price": "$450.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_044_01-526x660.jpg",
+        "description": null,
+        "category": "Homepage Featured / Orchids"
+      },
+      {
+        "name": "TJFlowers 0067",
+        "price": "$350.00",
+        "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_040_01-526x660.jpg",
+        "description": null,
+        "category": "Homepage Featured / Orchids"
+      }
+    ]
+  },
+  "valentines_day_page": {
+    "url": "https://www.tjflowersandevents.com/valentinesday",
+    "total_products": 54,
+    "products": [
+      { "name": "TJFlowers_VD001 2 dozen Red Roses in a Glass Vase", "price": "$275.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/Flowers/TJFlowers_526x660_valentinesday001-526x660.jpg", "description": "2 dozen Red Roses in a Vase", "category": "Valentines Day" },
+      { "name": "TJFlowers_VD002 1 Dozen Red Roses in a Glass Vase", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/Flowers/TJFlowers_526x660_valentinesday002-526x660.jpg", "description": "1 Dozen Red Roses in a glass vase", "category": "Valentines Day" },
+      { "name": "TJ Flowers Valentine's 2201", "price": "$300.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/IMG_6524-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJflowers 21006", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/image000006-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJflowers valentines 21002", "price": "$300.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/image000002%20(1)-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJflowers valentines 21003", "price": "$300.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/image000002%20(2)-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJflowers valentines 21004", "price": "$300.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/image000002%20(4)-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJflowers valentines 21005", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/image000005-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJflowers valentines 21007", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/image000007-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJflowers valentines day 21001", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/image000001-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ Flowers 2202", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/IMG_6529-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ Flowers Valentine's 2203", "price": "$300.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/IMG_6532-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ Flowers Valentine's 2204", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/IMG_6535-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ Flowers Valentine's 2205", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/IMG_6537-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ FLOWERS VALENTINES DAY 029", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/valentines/29_valentines-day_150w1-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ FLOWERS VALENTINES DAY 030", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/valentines/30_Valentines%20250-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ FLOWERS VALENTINES DAY 031", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/valentines/35_valentines150-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ Flowers Valentines Day 033", "price": "$300.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/valentines/33_valentines300W1-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ Flowers Valentines Day 036", "price": "$800.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/valentines/36_Valentines800w1-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ Flowers Valentines Day 037", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/valentines/tjflower037-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJFlowers 0001", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/TJFlowers_526x660_001_1-526x660.jpg", "description": "Pictures are for reference only. All arrangements subject to seasonal availability", "category": "Valentines Day" },
+      { "name": "TJFlowers 0009", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/TJFlowers_526x660_009_1-526x660.jpg", "description": "Pictures are for reference only. All arrangements subject to seasonal availability", "category": "Valentines Day" },
+      { "name": "Tjflowers 0153", "price": "$225.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/Flowers/TJFlowers_526x600_153_1-526x660.jpg", "description": "Pictures are for reference only. All arrangements subject to seasonal availability", "category": "Valentines Day" },
+      { "name": "Tjflowers 0409", "price": "$300.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/KakaoTalk_20230125_153800175-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ FLOWERS 026", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/tjflowers26-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ Flowers Valentine's 2206", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/image000001-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ FLOWERS VALENTINES DAY 010", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/valentines/10_valentines_200w1-526x660.jpg", "description": "TJ FLOWERS VALENTINES DAY 010", "category": "Valentines Day" },
+      { "name": "TJ FLOWERS VALENTINES DAY 011", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/valentines/11_valentines_150w1-526x660.jpg", "description": "TJ FLOWERS VALENTINES DAY 011", "category": "Valentines Day" },
+      { "name": "TJ FLOWERS VALENTINES DAY 014", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/valentines/14_valentines_200w1-526x660.jpg", "description": "TJ FLOWERS VALENTINES DAY 014", "category": "Valentines Day" },
+      { "name": "TJ FLOWERS VALENTINES DAY 015", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/valentines/15_valentines150w1-526x660.jpg", "description": "TJ FLOWERS VALENTINES DAY 015", "category": "Valentines Day" },
+      { "name": "TJ FLOWERS VALENTINES DAY 016", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/valentines/16_valentines150w1-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ FLOWERS VALENTINES DAY 017", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/valentines/17_valentines150_w1-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ FLOWERS VALENTINES DAY 018", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/valentines/18_valentines-250w1-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ FLOWERS VALENTINES DAY 020", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/valentines/20_valentines-150w1-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ FLOWERS VALENTINES DAY 022", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/valentines/22_valentines-150w1-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ FLOWERS VALENTINES DAY 024", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/valentines/24_valentines-150w1-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ FLOWERS VALENTINES DAY 025", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/valentines/25_valentines-150w1-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ FLOWERS VALENTINES DAY 027", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/valentines/27_valentinesday_200w1-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ FLOWERS VALENTINES DAY 028", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/valentines/01_valentine_150_1w1-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ Flowers Valentines Day 032", "price": "$300.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/valentines/32_valentines%20250-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJ FLOWERS VALENTINES DAY 034", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/valentines/34_valentinesday275-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "Tjflowers 0410", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/tjflower410-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJFLOWERS 0411", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/tjflower200_411-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJFLOWERS 0412", "price": "$300.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/tjflowers0412-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJFLOWERS 0413", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/thflower0413-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJFLOWERS 0414", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/Flowers/tjflowers0414-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJFLOWERS 0415", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/tjflower0415-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJFLOWERS 0417", "price": "$300.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/TJFLOWERS%200417-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "Tjflowers Romance 001", "price": "$300.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/valentines/01_valentine_300_2-526x660.jpg", "description": null, "category": "Valentines Day" },
+      { "name": "TJFlowers_VD005 Red Roses and Vanda Orchids", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/Flowers/TJFlowers_526x660_VT005_Red-Roses-and-Vanda-Orchids-526x660.jpg", "description": "Red Roses and Vanda Orchids", "category": "Valentines Day" },
+      { "name": "TJFlowers_VD006 White and Blue", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/Flowers/TJFlowers_526x660_VT006_Red-Roses-and-Vanda-Orchids-526x660.jpg", "description": "White and Blue", "category": "Valentines Day" },
+      { "name": "TJFlowers_VD007 Purple Roses and Sweet Pea", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/Flowers/TJFlowers_526x660_VT007_Purple-Roses-and-sweet-pea-526x660.jpg", "description": "Purple Roses and Sweet Pea", "category": "Valentines Day" },
+      { "name": "TJFlowers_VD008 Pink Sweet Heart", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/Flowers/TJFlowers_526x660_VT008_Pink-Sweet-Heart-526x660.jpg", "description": "Pink Sweet Heart", "category": "Valentines Day" },
+      { "name": "TJFlowers_VD009 Hot Pink and Orchid", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/Flowers/TJFlowers_526x660_VT009_Hot-Pink-and-Orchid-526x660.jpg", "description": "Hot Pink and Orchid", "category": "Valentines Day" }
+    ]
+  },
+  "rose_page": {
+    "url": "https://www.tjflowersandevents.com/rose",
+    "total_products": 7,
+    "products": [
+      { "name": "TJflowers valentines 21002", "price": "$300.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/image000002 (1)-526x660.jpg", "description": null, "category": "Rose" },
+      { "name": "TJflowers valentines 21004", "price": "$300.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Valentines/image000002 (4)-526x660.jpg", "description": null, "category": "Rose" },
+      { "name": "Tjflowers 0409", "price": "$300.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/KakaoTalk_20230125_153800175-526x660.jpg", "description": null, "category": "Rose" },
+      { "name": "Tjflowers 0320", "price": "$350.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/gallery/Succulents/Succulents_ (4)-526x660.jpg", "description": "Pictures are for reference only. All arrangements are subject to seasonal availability and pricing.", "category": "Rose" },
+      { "name": "Tjflowers 0321", "price": "$350.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/gallery/Succulents/Succulents_ (2)-526x660.jpg", "description": "Pictures are for reference only. All arrangements are subject to seasonal availability and pricing.", "category": "Rose" },
+      { "name": "Tjflowers 0407", "price": "$300.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/Rose/TJFlowers_526x660_113130Rose300-526x660.jpg", "description": "Pictures are for reference only. All arrangements are subject to seasonal availability and pricing.", "category": "Rose" },
+      { "name": "Tjflowers 0408", "price": "$700.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/Rose/TJFlowers_526x660_101717Rose700-526x660.jpg", "description": "Pictures are for reference only. All arrangements are subject to seasonal availability and pricing.", "category": "Rose" }
+    ]
+  },
+  "orchids_page": {
+    "url": "https://www.tjflowersandevents.com/orchids",
+    "total_products": 66,
+    "products": [
+      { "name": "TJFlowers 0042", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_015_01-526x660.jpg", "category": "Orchids" },
+      { "name": "TJFlowers 0043", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_016_01-526x660.jpg", "category": "Orchids" },
+      { "name": "TJFlowers 0044", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Plants/TJFlowers_orchid_017_01-526x660_1-526x660.jpg", "category": "Orchids" },
+      { "name": "TJFlowers 0045", "price": "$350.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_018_01-526x660.jpg", "category": "Orchids" },
+      { "name": "TJFlowers 0046", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_019_01-526x660.jpg", "category": "Orchids" },
+      { "name": "TJFlowers 0048", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_020_01-526x660.jpg", "category": "Orchids" },
+      { "name": "TJFlowers 0049", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_022_01-526x660.jpg", "category": "Orchids" },
+      { "name": "TJFlowers 0050", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_023_01-526x660.jpg", "category": "Orchids" },
+      { "name": "TJFlowers 0051", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_024_01-526x660.jpg", "category": "Orchids" },
+      { "name": "TJFlowers 0054", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_027_01-526x660.jpg", "category": "Orchids" },
+      { "name": "TJFlowers 0055", "price": "$125.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_028_01-526x660.jpg", "category": "Orchids" },
+      { "name": "TJFlowers 0057", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_030_01-526x660.jpg", "category": "Orchids" },
+      { "name": "TJFlowers 0058", "price": "$275.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_031_01-526x660.jpg", "category": "Orchids" },
+      { "name": "TJFlowers 0059", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_032_01-526x660.jpg", "category": "Orchids" },
+      { "name": "TJFlowers 0060", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_033_01-526x660.jpg", "category": "Orchids" },
+      { "name": "TJFlowers 0065", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_038_01-526x660.jpg", "category": "Orchids" },
+      { "name": "TJFlowers 0067", "price": "$350.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_040_01-526x660.jpg", "category": "Orchids" },
+      { "name": "TJFlowers 0069", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_042_01-526x660.jpg", "category": "Orchids" },
+      { "name": "TJFlowers 0070", "price": "$300.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_043_01-526x660.jpg", "category": "Orchids" },
+      { "name": "TJFlowers 0071", "price": "$450.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_044_01-526x660.jpg", "category": "Orchids" },
+      { "name": "TJFlowers 0072", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_045_01-526x660.jpg", "category": "Orchids" },
+      { "name": "TJFlowers 0074", "price": "$350.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_047_01-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0110", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/spring/TJFlowers_526x660_TJ110_125-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0133", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_133_150-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0134", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_orchid_134_125-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0247", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x600_174549_200_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0248", "price": "$350.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/TJFlowers_526x600_174505_300_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0249", "price": "$350.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/TJFlowers_526x600_174359_300_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0250", "price": "$350.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/TJFlowers_526x600_190111_350_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0251", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/TJFlowers_526x600_134435_150_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0252", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x600_133742_200_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0253", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/TJFlowers_526x600_162140_200_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0254", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/TJFlowers_526x600_090705_200_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0255", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/TJFlowers_526x600_130419_100_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0256", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/TJFlowers_526x600_145143_150_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0257", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/TJFlowers_526x600_144746_200_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0258", "price": "$300.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/TJFlowers_526x600_170056_300_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0260", "price": "$350.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/TJFlowers_526x600_153850_350_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0261", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/TJFlowers_526x600_150106_200_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0262", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x600_145949_200_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0263", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x600_165014_200_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0264", "price": "$125.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/TJFlowers_526x600_083317_85_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0265", "price": "$125.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/TJFlowers_526x600_082641_85_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0266", "price": "$300.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/TJFlowers_526x600_114417_200_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0267", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/TJFlowers_526x600_144005_200_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0268", "price": "$350.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x600_145640_350_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0269", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/TJFlowers_526x600_174950_250_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0270", "price": "$350.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x600_174842_350_1-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0355", "price": "$350.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_121138_orchid350-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0374", "price": "$300.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_185458001Oc300-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0377", "price": "$175.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_185743001Oc175-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0378", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_185901001Oc250-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0379", "price": "$175.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_190000001Oc175-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0381", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_190131001Oc150-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0382", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_190230001Oc150-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0383", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_190317001Oc250-526x660.jpg", "category": "Orchids" },
+      { "name": "Tjflowers 0384", "price": "$350.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_190402001Oc350-526x660.jpg", "category": "Orchids" },
+      { "name": "TJflowers_Orchid 001", "price": "$300.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/orchid_300w-526x660.jpg", "category": "Orchids" },
+      { "name": "TJflowers_Orchid 002", "price": "$300.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/orchid_02_300w-526x660.jpg", "category": "Orchids" },
+      { "name": "TJflowers_Orchid 003", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/orchid_03_200w-526x660.jpg", "category": "Orchids" },
+      { "name": "TJflowers_Orchid 004", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/orchid_04_200-(2)_w-526x660.jpg", "category": "Orchids" },
+      { "name": "TJflowers_Orchid 005", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/orchid_05_150w-526x660.jpg", "category": "Orchids" },
+      { "name": "TJflowers_Orchid 006", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/orchid_06_150w-526x660.jpg", "category": "Orchids" },
+      { "name": "TJflowers_Orchid 007", "price": "$125.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/orchid_07_125-(2)w1-526x660.jpg", "category": "Orchids" },
+      { "name": "TJflowers_Orchid 008", "price": "$175.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/orchid_08_175-(1)w-526x660.jpg", "category": "Orchids" },
+      { "name": "TJflowers_Orchid 009", "price": "$175.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/orchid_09_175w-526x660.jpg", "category": "Orchids" },
+      { "name": "TJFlowers_VD003 Pink Orchids", "price": "$125.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/orchids/TJFlowers_526x660_VT003_Pink-orchids-526x660.jpg", "description": "Pink Orchids", "category": "Orchids" }
+    ]
+  },
+  "spring_page": {
+    "url": "https://www.tjflowersandevents.com/spring",
+    "total_products_identified": 10,
+    "note": "Spring page contains 50+ products but the fetcher returned a subset. Key new spring products listed below.",
+    "products": [
+      { "name": "TJ Spring m0016", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/spring25/IMG_7307%20(1)-526x660.jpg", "category": "Spring", "status": "New" },
+      { "name": "TJ Spring m0010", "price": "$250.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/spring25/IMG_7636-526x660.jpg", "category": "Spring", "status": "New" },
+      { "name": "TJ Spring m0011", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/spring25/IMG_7789-526x660.jpg", "category": "Spring", "status": "New" },
+      { "name": "TJ Spring m0012", "price": "$300.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/spring25/IMG_7789-526x660.jpg", "category": "Spring", "status": "New" },
+      { "name": "TJ Spring m0014", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/spring25/image000003%20(1)-526x660.jpg", "category": "Spring", "status": "New" },
+      { "name": "TJ Spring m0015", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/spring25/IMG_7271%20(1)-526x660.jpg", "category": "Spring", "status": "New" },
+      { "name": "TJ Spring m0015 (alternate)", "price": "$350.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/spring25/IMG_7258%20(1)-526x660.jpg", "category": "Spring", "status": "New" },
+      { "name": "TJFlowers 0002", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/TJFlowers_526x660_002_1-526x660.jpg", "category": "Spring" },
+      { "name": "TJFlowers 0003", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/TJFlowers_526x660_003_1-526x660.jpg", "category": "Spring" },
+      { "name": "TJFlowers 0010", "price": "$200.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/TJFlowers_526x660_010_1-526x660.jpg", "category": "Spring" },
+      { "name": "TJflowers SpringFlower001", "price": "$150.00", "image_url": "https://www.tjflowersandevents.com/image/cache/catalog/Flowers/spring/IMG_2026-526x660.jpg", "description": "Spring bloom bouquet featuring seasonal flowers like tulips, daisies, lilies, and roses for gift-giving occasions.", "category": "Spring" }
+    ]
+  },
+  "summary": {
+    "total_unique_products_approximate": 130,
+    "price_range": "$125.00 - $800.00",
+    "image_cdn_base": "https://www.tjflowersandevents.com/image/cache/catalog/",
+    "image_dimensions_standard": "526x660",
+    "categories": ["Valentines Day", "Rose", "Orchids", "Spring", "Plants", "Standard Flowers"],
+    "platform": "OpenCart (based on image cache path structure)",
+    "contact_phone": "(212) 628-1214"
+  }
+}

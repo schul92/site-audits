@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-93928009-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- Basic -->
+<meta charset="UTF-8" />
+<title>The page you requested cannot be found!</title>
+<base href="" />
+
+
+<!-- Mobile Specific Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Web Fonts  -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+<!-- Icon Fonts  -->
+<link rel="stylesheet" href="catalog/view/theme/welldone/font/style.css">
+<link rel="stylesheet" href="catalog/view/theme/welldone/js/vendor/waves/waves.css">
+<link rel="stylesheet" href="catalog/view/theme/welldone/js/vendor/slick/slick.css">
+<link rel="stylesheet" href="catalog/view/theme/welldone/js/vendor/slick/slick-theme.css">
+<link rel="stylesheet" href="catalog/view/theme/welldone/js/vendor/bootstrap-select/bootstrap-select.css">
+<link rel="stylesheet" href="catalog/view/theme/welldone/css/style.css">
+<link rel="stylesheet" href="catalog/view/theme/welldone/css/opencart.css">
+<link rel="stylesheet" href="catalog/view/theme/welldone/css/style-colors.css">
+<link rel="stylesheet" href="catalog/view/theme/welldone/css/style-colors-user-0.css">
+<link rel="stylesheet" href="catalog/view/theme/welldone/css/toolspanel.css">
+<link rel="stylesheet" href="catalog/view/theme/welldone/js/vendor/rs-plugin/css/settings.css">
+<link rel="stylesheet" href="catalog/view/theme/welldone/js/vendor/magnific-popup/magnific-popup.css">
+<link rel="stylesheet" href="catalog/view/javascript/font-awesome/css/font-awesome.min.css">
+<link href="//fonts.googleapis.com/css?family=Aguafina+Script:regular&amp;subset=latin-ext" rel="stylesheet" type="text/css"><link href="//fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet" type="text/css"><script src="catalog/view/theme/welldone/js/vendor/jquery/jquery.js"></script>
+<script src="catalog/view/theme/welldone/js/vendor/modernizr/modernizr.js"></script>
+<script src="catalog/view/javascript/common.js"></script>
+<link href="image/catalog/cart.png" rel="icon" />
+
+<!-- Custom Fonts -->
+<link href='//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+<!-- Head Libs -->
+<!--[if IE]>
+        <link rel="stylesheet" href="catalog/view/theme/welldone/css/ie.css">
+        <![endif]-->
+<!--[if lte IE 8]>
+        <script src="catalog/view/theme/welldone/js/vendor/respond/respond.js"></script>
+        <script src="catalog/view/theme/welldone/js/vendor/excanvas/excanvas.js"></script>
+        <![endif]-->
+<style>.nav-submenu {
+  border-top: 1px solid #f5f5f5;
+  border-bottom: 5px solid #f5f5f5;
+  background-color: #ffffff;
+  position: relative;
+  margin-top: -20px;
+  display: block;
+}
+.nav-submenu.border-bottom-none {
+  border-bottom: none;
+  padding-top: 0px;
+  margin-top: 0;
+}
+.nav-submenu ul {
+  border-left: 1px solid #f5f5f5;
+}
+.nav-submenu ul li {
+  border-right: 1px solid #f5f5f5;
+}
+.nav-submenu ul li a {
+  padding: 40px 15px 30px;
+  font-weight: lighter;
+  font-size: 16px;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+}
+.nav-submenu ul li a span {
+  display: block;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.nav-submenu ul li a:hover {
+  color: #ffffff;
+  background-color: #536dfe;
+}
+.nav-submenu ul li a:hover span {
+  color: #ffffff;
+}
+@media screen and (max-width: 781px) {
+  .nav-submenu ul li {
+    width: 25%;
+    float: left;
+  }
+}
+@media screen and (max-width: 570px) {
+  .nav-submenu ul li {
+    width: 33.3%;
+    float: left;
+  }
+}
+@media screen and (max-width: 420px) {
+  .nav-submenu ul li {
+    width: 50%;
+    float: left;
+  }
+}
+.media {
+  padding-bottom: 24px;
+}
+.media:last-child {
+  padding-bottom: 0;
+}
+.media-body {
+  padding-bottom: 16px;
+}
+.media h4 {
+  font-size: 4.9em;
+  font-weight: lighter;
+  padding: 110px 0 4px 0;
+}
+.media h5 {
+  font-size: 3.5em;
+  font-weight: 300 !important;
+  word-spacing: -0.02em;
+  letter-spacing: -0.02em;
+  padding: 0 0 26px 0;
+}
+.media p {
+  padding-bottom: 30px;
+  width: 87%;
+}
+.media .btn--wd {
+  text-transform: uppercase;
+}
+.media .media-body {
+  text-align: left;
+}
+@media (max-width: 1213px) {
+  .media .media-object {
+    max-width: 422px;
+    height: auto;
+  }
+}
+@media (max-width: 1005px) {
+  .media h4 {
+    padding-top: 40px;
+    font-size: 4em;
+  }
+  .media h5 {
+    font-size: 2.7em;
+  }
+  .media .media-object {
+    max-width: 280px;
+    height: auto;
+  }
+  .media .media-body {
+    text-align: center;
+    padding-bottom: 60px;
+  }
+  .media .pull-left,
+  .media .pull-right {
+    text-align: center;
+    overflow: hidden;
+  }
+  .media p {
+    width: 100%;
+  }
+}
+.boxed .media .media-object {
+  max-width: 500px;
+  height: auto;
+}
+.footer__column-links {
+    background-color: #434343;
+    color: #b4b4b4;
+}
+.footer__subscribe {
+    background-color: #333333;
+    color: #ffffff;
+}
+.banner--image h5 {
+  font-family:  sans-serif;
+  color: #333333;
+  font-size: 4.7em;
+  font-weight: 300;
+  padding-bottom: 10px;
+}
+.banner--image h3 {
+  font-family:  sans-serif;
+  color: #333333;
+  font-size: 1.8em;
+  line-height: 1.25em;
+  font-weight: 300;
+  width: 60%;
+}
+@media (max-width: 800px) {
+  .banner--image .banner--image__text {
+    font-size: 90%;
+  }
+}
+@media (max-width: 480px) {
+  .banner .text-uppercase {
+    line-height: 1.2em;
+  }
+  .banner .banner--icon__text__divider {
+    margin-bottom: 5px;
+    height: 5px;
+  }
+}
+
+ .tp-caption--wd-1 {
+  font-size: 105px;
+  line-height: 0.9em;
+  color: #333333;
+  font-family:  sans-serif;
+  font-weight: bold;
+  margin-top: -200px;
+  margin-left: 33px;
+  letter-spacing: -0.04em;
+}
+ .tp-caption--wd-2 {
+  font-size: 52px;
+  font-family:  sans-serif;
+  color: #333333;
+  margin-top: -160px;
+  margin-left: 33px;
+}
+ .tp-caption--wd-3 {
+  font-size: 19px;
+  line-height: 1.3em;
+  color: #333333;
+  margin-top: -120px;
+  margin-left: 33px;
+}
+ .tp-caption--wd-4 {
+  margin-left: 33px;
+  margin-top: 110px;
+}
+ .tp-caption--wd-4 .btn {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+}
+@media (max-width: 700px) {
+   .tp-caption--wd-4 .btn {
+    font-size: 11px;
+    padding: 12px 25px;
+    margin-top: 60px;
+  }
+   .tp-caption--wd-3 {
+    font-size: 30px;
+    line-height: 1.3em;
+    width: 30% !important;
+    margin-top: -50px;
+    white-space: normal !important;
+  }
+   .tp-caption--wd-3 br {
+    display: none;
+  }
+   .tp-caption .tp-caption-img img {
+    width: 60%;
+    height: auto;
+  }
+}
+@media (max-width: 420px) {
+   .tp-caption--wd-4 .btn {
+    font-size: 10px;
+    padding: 9px 15px;
+  }
+}
+ .rs-parallaxlevel-111.tp-caption--wd-1 {
+  width: 30%;
+  left: 50% !important;
+  text-align: left;
+  font-size: 52px;
+  line-height: 1em;
+  font-family:  sans-serif;
+  color: #333333;
+  margin-top: -190px;
+}
+ .rs-parallaxlevel-112.tp-caption--wd-2 {
+  width: 30%;
+  left: 50% !important;
+  text-align: left;
+  font-size: 105px;
+  line-height: 1em;
+  color: #333333;
+  font-family:  sans-serif;
+  font-weight: bold;
+  margin-top: -160px;
+  letter-spacing: -0.04em;
+}
+ .rs-parallaxlevel-113.tp-caption--wd-3 {
+  width: 25%;
+  left: 50% !important;
+  text-align: left;
+  font-size: 19px;
+  line-height: 1.3em;
+  color: #333333;
+  margin-top: -70px;
+}
+ .rs-parallaxlevel-114.tp-caption--wd-4 {
+  width: 30%;
+  left: 50% !important;
+  text-align: left;
+  margin-top: 130px;
+}
+ .rs-parallaxlevel-114.tp-caption--wd-4 .btn {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+}
+@media (max-width: 700px) {
+   .rs-parallaxlevel-114.tp-caption--wd-4 .btn {
+    font-size: 11px;
+    padding: 12px 25px;
+  }
+   .rs-parallaxlevel-113.tp-caption--wd-3 {
+    font-size: 30px;
+    line-height: 1.3em;
+  }
+   .tp-caption2 .tp-caption-img img {
+    width: 60%;
+    height: auto;
+  }
+}
+@media (max-width: 420px) {
+   .rs-parallaxlevel-114.tp-caption--wd-4 .btn {
+    font-size: 10px;
+    padding: 9px 15px;
+  }
+}
+@media (max-width: 700px) {
+   .rs-parallaxlevel-111.tp-caption--wd-1 {
+    width: 30%;
+    left: 48% !important;
+    text-align: left;
+    font-size: 52px;
+    line-height: 1em;
+    font-family:  sans-serif;
+    color: #333333;
+    margin-top: -190px;
+  }
+   .rs-parallaxlevel-112.tp-caption--wd-2 {
+    width: 30%;
+    left: 48% !important;
+    text-align: left;
+    font-size: 105px;
+    line-height: 1em;
+    color: #333333;
+    font-family:  sans-serif;
+    font-weight: bold;
+    margin-top: -160px;
+    letter-spacing: -0.04em;
+  }
+   .rs-parallaxlevel-113.tp-caption--wd-3 {
+    width: 25%;
+    left: 48% !important;
+    text-align: left;
+    font-size: 19px;
+    line-height: 1.3em;
+    color: #333333;
+    margin-top: -70px;
+  }
+   .rs-parallaxlevel-114.tp-caption--wd-4 {
+    width: 30%;
+    left: 48% !important;
+    text-align: left;
+    margin-top: 130px;
+  }
+   .rs-parallaxlevel-114.tp-caption--wd-4 .btn {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+  }
+}
+@media (max-width: 800px) {
+  .tp-banner-container .tp-rightarrow.default {
+    right: 0 !important;
+  }
+  .tp-banner-container .tp-leftarrow.default {
+    left: 0 !important;
+  }
+}
+.navbar.navbar-wd .nav > li{float:left;}
+
+
+
+.owl-wrapper-outer .owl-wrapper .owl-item .img-responsive {
+  height: 270px;
+  width: 1200px;
+}
+.wrapper .page-content .content {
+  padding-top: 20px;
+}
+.owl-carousel.owl-theme {
+  display: none !important;
+}
+.owl-fade-in, .owl-fade-out {
+  animation: inherit !important;
+}
+
+.four-in-row .product-preview-wrapper {padding-left: 20px;padding-right: 20px;}
+#pageContent .breadcrumbs + .content {padding-top: 0;}
+
+.content.fullwidth{padding-top:0  !important;}
+.content.top-null{padding:0 !important;}
+.slick-slide {
+height:auto !important;
+}
+.product-preview__image img {height: 440px;}
+.four-in-row .product-preview__image img{height:320px;}
+.image_outer{height: 260px;overflow: hidden;}
+.image_outer img{float:left; width:100%; margin: 0px 0 0 !important;}
+
+.back-to-top + .container .mobile-collapse:nth-child(5) .mobile-collapse__content ul li:nth-child(1){padding-left: 0;}
+.back-to-top + .container .mobile-collapse:nth-child(5) .mobile-collapse__content ul li:nth-child(5){padding-left: 0;}
+.back-to-top + .container .mobile-collapse:nth-child(5) .mobile-collapse__content ul li{padding-left: 10px;}
+
+/*.tp-bgimg.defaultimg{background-size:100% 100% !important;}*/
+
+.panel-default .panel-body .col-sm-6:nth-child(1) {
+  margin: 50px 0 0;
+  padding: 0;
+}
+#gallery{background: #9c9c9c;}
+.gallery__item__image img{opacity:1;}
+.gallery__item:hover img{opacity:0.6}
+@media screen and (max-width:480px)
+{
+.product-preview__image img {height: 340px;}
+}
+.set_con h2 {
+  color: #000;
+  float: left;
+  margin: 30px 0 0;
+  width: 100%;
+}
+@media (max-width:1199px){
+body .product-preview__image img {
+  height: auto;
+}
+body .four-in-row .product-preview__image img {
+  height: auto;
+}
+}
+@media (min-width:992px) and (max-width:1199px){
+.sticky-wrapper >.navbar>.container>#slidemenu {
+  width: 100%;
+}
+.sticky-wrapper >.navbar>.container>#slidemenu >ul{
+  width: 100%;
+}
+body .content>.tp-banner-container {
+  height: 500px !important;
+}
+}
+
+@media (min-width:768px) and (max-width:991px){
+footer .row > .mobile-collapse--last {
+  padding-left: 0;
+}
+footer .row > .mobile-collapse--last .mobile-collapse__content li:last-child {
+  padding-left: 0!important;
+}
+body .content>.tp-banner-container {
+  height: 500px !important;
+}
+}
+@media (max-width:767px){
+footer .footer__subscribe .row .col-sm-7.col-md-6 {
+  display: none;
+}
+footer .footer__subscribe .row .social-links {
+  margin: 0;
+}
+footer .footer__bottom >.container>div:nth-child(2) {
+  display: none;
+}
+}</style>        
+<script type="text/javascript">$(document).ready(function(){
+   jQuery('.mobile-collapse--last').click(function(){
+  if(!jQuery(this).hasClass('open')){  
+jQuery(this).addClass('open');
+  jQuery('.mobile-collapse--last .v-links-list.mobile-collapse__content').hide();
+jQuery(this).children('div').children('.v-links-list.mobile-collapse__content').show();
+  }else{
+    jQuery(this).removeClass('open');
+  jQuery(this).children('div').children('.v-links-list.mobile-collapse__content').hide();
+  }
+});
+}); 
+
+
+
+$(document).ready(function(){
+
+$('#slider-type-1 ul li:nth-child(1)').css('cursor', 'pointer');
+$("#slider-type-1 ul li:nth-child(1)").click(function(){
+    window.location='https://www.tjflowersandevents.com/valentinesday';
+});
+
+$('#slider-type-1 ul li:nth-child(2)').css('cursor', 'pointer');
+$("#slider-type-1 ul li:nth-child(2)").click(function(){
+    window.location='https://www.tjflowersandevents.com/valentinesday';
+
+});
+});
+
+
+</script>
+<link rel="canonical" href="http://www.tjflowersandevents.com" />
+
+</head>
+<body class=" ">
+<div id="loader-wrapper"  class="loader-off">
+<div id="loader"></div>
+</div>
+<!-- Modal Search -->
+<div class="overlay overlay-scale">
+  <button type="button" class="overlay-close"> ✕ </button>
+  <div class="overlay__content">
+    <form id="search-form" class="search-form outer" action="index.php" method="get">
+      <input type="hidden" name="route" value="product/search">
+      <div class="input-group input-group--wd">
+        <input type="text" class="input--full" value="" placeholder="Search" name="search">
+        <span class="input-group__bar"></span> </div>
+      <button class="btn btn--wd text-uppercase wave waves-effect"><span class="icon icon-search"></span></button>
+    </form>
+  </div>
+</div>
+<!-- / end Modal Search -->
+
+<!-- Modal -->
+<div class="modal quick-view zoom" id="quickView"  style="opacity: 1">
+  <div class="modal-dialog">
+        <div id="modalLoader-wrapper"><div id="modalLoader"></div></div>
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+<!-- /.modal -->
+
+<div class="wrapper"> 
+  <!-- Header section -->
+  
+  <header class="header  header--sticky">
+  
+  
+
+
+
+
+<div class="header-line hidden-xs">
+      <div class="container">
+
+      
+        <div class="pull-left">
+          <div class="social-links social-links--colorize">
+            <ul>
+<li class="social-links__item"><a href="https://www.facebook.com/TJ-Flowers-and-Events-801409379908494/info?tab=overview"  ><i class="icon icon-facebook" ></i>&nbsp;</a></li><li class="social-links__item"><a href=" https://www.instagram.com/tjflowersnyc/"  ><i class="icon icon-linkedin" ></i>&nbsp;</a></li><li class="social-links__item"><i class="icon icon-google" ></i>&nbsp;</li><li class="social-links__item"><a href="https://www.pinterest.com/tjflowersnyc/"  ><i class="icon icon-pinterest" ></i>&nbsp;</a></li><li class="social-links__item"><a href="mailto:Tjflowersevents@gmail.com "  ><i class="icon icon-mail" ></i>&nbsp;</a></li>            
+            </ul>
+          </div>
+        </div>
+      
+
+  
+        <div class="pull-right">
+          <div class="user-links">
+            <ul>
+              <li class="user-links__item"><i class="icon icon-telephone" ></i>&nbsp;<span style="color:rgba(255,255,255,1)">(212) 628-1214</span></li><li class="user-links__item"><a href="login"  >Sign In</a></li><li class="user-links__item"><a href="register"  >Register</a></li><li class="user-links__item"><a href="/about_us"  ><span style="color:rgba(0,223,255,1)">About</span></a></li><li class="user-links__item"><a href="/contact-us"  ><span style="color:rgba(0,223,255,1)">Contact Us</span></a></li>  
+            </ul>
+          </div>
+        </div>
+  </div>
+</div>
+
+    
+
+    
+    <div class="header__dropdowns-container">
+      <div class="header__dropdowns">
+        <div class="header__search pull-left"> <a href="#" class="btn dropdown-toggle btn--links--dropdown header__dropdowns__button search-open"><span class="icon icon-search"></span></a> </div>
+        
+        <div class="header__cart pull-left" id="cart">
+          <span class="header__cart__indicator hidden-xs" >$0.00</span>
+          
+          <div class="dropdown pull-right"><a href="#" class="btn dropdown-toggle btn--links--dropdown header__cart__button header__dropdowns__button" data-toggle="dropdown"><span class="icon icon-bag-alt"></span><span class="badge badge--menu">0</span></a>
+            <div class="dropdown-menu animated fadeIn shopping-cart" role="menu">
+              <div class="shopping-cart__settings"><a href="https://www.tjflowersandevents.com/cart" class="icon icon-gear"></a></div>
+              <div class="shopping-cart__top text-uppercase">View Cart</div>
+              
+                            <ul>
+                <li class='shopping-cart__item'>
+                  <p class="text-center">Your shopping cart is empty!</p>
+                </li>
+              </ul>  
+                             
+            </div>
+          </div>
+        </div>        
+        <div class="dropdown pull-right"> <a href="#" class="btn dropdown-toggle btn--links--dropdown header__dropdowns__button" data-toggle="dropdown"><span class="icon icon-dots"></span></a>
+          <ul class="dropdown-menu ul-row animated fadeIn" role="menu">
+            
+            
+
+<li class='li-col currency'>
+<h4>Currency</h4>
+
+<form action="https://www.tjflowersandevents.com/index.php?route=common/currency/currency" method="post" enctype="multipart/form-data" id="form-currency">
+<ul>
+<li class="currency__item"><a href="#" class="currency-select" name="EUR"><span>€</span>Euro</a></li><li class="currency__item"><a href="#" class="currency-select" name="GBP"><span>£</span>Pound Sterling</a></li><li class="currency__item active"><a href="#" class="currency-select" name="USD"><span>$</span>US Dollar</a></li></ul>
+  <input type="hidden" name="code" value="" />
+  <input type="hidden" name="redirect" value="https://www.tjflowersandevents.com/index.php?route=error/not_found" />
+</form>
+</li>
+
+
+            
+            
+            <li class='li-col list-user-menu'>
+			         <h4>My Account</h4>
+              <ul>
+                 <li><a href="https://www.tjflowersandevents.com/wishlist" id="wishlist-total" title="Wish List (0)"><span>Wish List (0)</span></a></li>
+                                  <li><a href="register">Register</a></li>
+                  <li><a href="login">Login</a></li>
+                              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-wd" id="navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" id="slide-nav"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          
+                    <!--  Logo  --> 
+          <a class="logo" href="https://www.tjflowersandevents.com/"> 
+          <img class="logo-default" src="image/catalog/logo_ak.png" title="TJ Flowers &amp; Events" alt="TJ Flowers &amp; Events"/> 
+          <img class="logo-transparent" src="https://www.tjflowersandevents.com/image/catalog/logo_ak.png" title="TJ Flowers &amp; Events" alt="TJ Flowers &amp; Events"/>
+          <img class="logo-mobile" src="https://www.tjflowersandevents.com/image/catalog/logo_ak.png" title="TJ Flowers &amp; Events" alt="TJ Flowers &amp; Events"/> 
+           </a> 
+          <!-- End Logo --> 
+                  </div>
+
+
+<div class="pull-left search-focus-fade" id="slidemenu">
+          <div class="slidemenu-close visible-xs">✕</div>
+          <ul class="nav navbar-nav">
+          <li><a href="wedding-and-events"  ><span class="link-name"></span></a></li>
+<li><a href="/"  ><span class="link-name"><i class="icon icon-home" ></i>&nbsp;</span></a></li>
+<li><a href="flower-shop"   class="dropdown-toggle" ><span class="link-name">Flowers</span><span class="caret caret--dots"></span></a>
+<ul class="dropdown-menu animated fadeIn 123" role="menu">
+<li class="level2 321"><a href="/valentinesday"  >Valentines day</a></li>
+<li class="level2 321"><a href="https://www.tjflowersandevents.com/mothers-day"  >Mother's Day</a></li>
+<li class="level2 321"><a href="spring"  >Spring</a></li>
+<li class="level2 321"><a href="rose"  >Rose</a></li>
+<li class="level2 321"><a href="condolences"  >Condolences</a></li>
+</ul>
+</li>
+<li><a href="plants"   class="dropdown-toggle" ><span class="link-name">Plants</span><span class="caret caret--dots"></span></a>
+<ul class="dropdown-menu animated fadeIn 123" role="menu">
+<li class="level2 321"><a href="orchids"  >Orchids</a></li>
+<li class="level2 321"><a href="succulents"  >Succulents</a></li>
+<li class="level2 321"><a href="plant"  >Plants</a></li>
+</ul>
+</li>
+<li><a href="wedding-and-events"  ><span class="link-name">Wedding &amp; Events</span></a></li>
+<li><a href="gallery"  ><span class="link-name">Gallery</span></a></li>
+          </ul>
+        </div>
+        
+               
+      </div>
+    </nav>
+  </header>  
+    
+  <div id="pageContent" class="page-content" >
+
+<section class="breadcrumbs  hidden-xs">
+<div class="container">
+  <ol class="breadcrumb breadcrumb--wd pull-left">
+        <li><a href="https://www.tjflowersandevents.com/"><i class="fa fa-home"></i></a></li>
+        <li><a href="https://www.tjflowersandevents.com/index.php?route=error/not_found">The page you requested cannot be found!</a></li>
+      </ol>
+</div>  
+</section>
+
+
+<section class="content">
+  <div class="container">
+    <div class="row">                    <div id="content" class="col-md-12">
+             
+        <div class="not-found-box">
+				<div class="not-found-box__image">
+					<img src="catalog/view/theme/welldone/images/page-404.png" alt="">
+					<div class="not-found-box__text">
+						<h2 class="text-left">The page you requested cannot be found!</h2>
+						<h4 class="text-left">The page you requested cannot be found.</h4>
+					</div>
+				</div>
+        
+        <div class="buttons">
+          <div class="pull-right"><a href="https://www.tjflowersandevents.com/" class="btn btn-primary">Continue</a></div>
+        </div>
+        
+			</div>
+      
+        
+        
+        
+      </div>
+      </div>
+  </div>
+</section>
+
+</div>
+<footer class="footer">
+    
+
+    <div class="footer__column-links">
+     <div class="back-to-top"> <a href="#top" class="btn btn--round btn--round--lg"><span class="icon-arrow-up"></span></a></div>
+      <div class="container">
+        <div class="row"><div class="col-md-3 hidden-xs hidden-sm"><div class=""><a class="logo logo--footer" href="index.html"> <img src="image/catalog/logo_trans.png" alt="logo"> </a> <p><span style="line-height: 20.4px;">TJ Flowers &amp; Events is a Full-service flower shop and orchid specialist that has been proudly serving NYC since 1988.</span><strong></strong></p></div></div><div class="col-sm-3 col-md-2 mobile-collapse"><h5 class="title text-uppercase mobile-collapse__title">Information</h5><div class="v-links-list mobile-collapse__content"><ul><li><a href="https://www.tjflowersandevents.com/about-us">About Us</a></li><li><a href="https://www.tjflowersandevents.com/delivery">Delivery Information</a></li><li><a href="https://www.tjflowersandevents.com/privacy">Privacy Policy</a></li><li><a href="https://www.tjflowersandevents.com/terms">Terms &amp; Conditions</a></li></ul></div></div><div class="col-sm-3 col-md-2 mobile-collapse"><h5 class="title text-uppercase mobile-collapse__title">Customer Service</h5><div class="v-links-list mobile-collapse__content"><ul><li><a href="/contact-us">Contact Us</a></li><li><a href="/returns-policy">Returns</a></li><li><a href="/sitemap">Site Map</a></li></ul></div></div><div class="col-sm-3 col-md-2 mobile-collapse"><h5 class="title text-uppercase mobile-collapse__title">Extras</h5><div class="v-links-list mobile-collapse__content"><ul><li><a href="/brands">Brands</a></li><li><a href="/gift-certificates">Gift Certificates</a></li><li><a href="https://www.tjflowersandevents.com/affiliates">Affiliates</a></li><li><a href="/specials-offers">Specials</a></li></ul></div></div><div class="col-sm-3 col-md-3 mobile-collapse mobile-collapse--last"><div class=""><h5 class="title text-uppercase mobile-collapse__title">Company Info</h5><div class="v-links-list mobile-collapse__content"><ul><li><i class="icon icon-home-alt" style="color:rgba(255,255,255,1)"></i>&nbsp;New York</li><li><a href="mailto:Tjflowersevents@gmail.com"  >1640 York Ave. New York, NY 10028</a></li><li><i class="icon icon-telephone" ></i>&nbsp;NY (212) 628-1214 </li><li><a href="mailto:Tjflowersevents@gmail.com"  ><i class="icon icon-mail-fill" ></i>&nbsp;Tjflowersevents@gmail.com</a></li></ul></div></div></div></div></div></div>    
+    
+    <div class="footer__subscribe">
+      <div class="container 2">
+        <div class="row">
+          <div class="col-sm-7 col-md-6">
+                      
+          </div>
+          <div class="col-sm-5 col-md-6">
+            
+<div class="social-links social-links--colorize social-links--large">
+  <ul>
+    <li class="social-links__item"><a href="https://www.facebook.com/TJ-Flowers-and-Events-801409379908494/info?tab=overview"  ><i class="icon icon-facebook" ></i>&nbsp;</a></li><li class="social-links__item"><a href="http://twitter.com"  ><i class="icon icon-twitter" ></i>&nbsp;</a></li><li class="social-links__item"><a href="http://google.com"  ><i class="icon icon-google" ></i>&nbsp;</a></li><li class="social-links__item"><a href="#"  ><i class="icon icon-pinterest" ></i>&nbsp;</a></li><li class="social-links__item"><a href="#"  ><i class="icon icon-mail" ></i>&nbsp;</a></li>  
+  </ul>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer__bottom">      
+      <div class="container">
+      
+        <div class="pull-left text-uppercase">© 2016-2022&nbsp;<a href="http://dev06.mobiwebi.com/">TJ Flowers :)</a>. All Rights Reserved. Powered by MOBIWEBI INC.</div>
+        
+        <div class="pull-left text-center"><p><br></p></div>
+        
+        <div class="pull-right text-right text-uppercase">with love <span class="icon-favorite color-heart"></span> from<!-- <a href="http://themeforest.net/user/etheme">
+</a> -->
+<a href="wedding-and-events">TJ Flowers &gt;&nbsp;&amp; Events</a></div>
+          
+      </div>
+</div>
+  </footer>
+</div>
+<script src="catalog/view/theme/welldone/js/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="catalog/view/theme/welldone/js/vendor/waves/waves.min.js"></script>
+<script src="catalog/view/theme/welldone/js/vendor/slick/slick.min.js"></script>
+<script src="catalog/view/theme/welldone/js/vendor/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="catalog/view/theme/welldone/js/vendor/parallax/jquery.parallax-1.1.3.js"></script>
+<script src="catalog/view/theme/welldone/js/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="catalog/view/theme/welldone/js/vendor/waypoints/sticky.min.js"></script>
+<script src="catalog/view/theme/welldone/js/vendor/doubletaptogo/doubletaptogo.js"></script>
+<script src="catalog/view/theme/welldone/js/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="catalog/view/theme/welldone/js/vendor/countdown/jquery.plugin.min.js"></script>
+<script src="catalog/view/theme/welldone/js/vendor/countdown/jquery.countdown.min.js"></script>
+<script src="catalog/view/theme/welldone/js/custom.js"></script>
+<script src="catalog/view/theme/welldone/js/welldone.js"></script>
+<script src="catalog/view/theme/welldone/js/vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+<script src="catalog/view/theme/welldone/js/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+<script src="catalog/view/theme/welldone/js/vendor/elevatezoom/jquery.elevatezoom.js"></script>
+<script src="catalog/view/theme/welldone/js/jquery.scrollTo.min.js"></script>
+<script src="catalog/view/theme/welldone/js/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="catalog/view/theme/welldone/js/vendor/isotope/isotope.pkgd.min.js"></script>
+<script src="catalog/view/theme/welldone/js/jquery.cookie.js"></script>
+<script src="catalog/view/theme/welldone/js/landing-banners.js"></script>
+
+<!-- SLIDER REVOLUTION 4.x SCRIPTS  --> 
+<div class="modal fade bs-example-modal-sm" role="dialog" id="notificationDialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <button type="button" class="close icon-clear" data-dismiss="modal"></button>
+      <div class="text-center">
+        <div class="divider divider--xs"></div>
+        <div class="loading">
+          <div class="divider divider--sm"></div>
+          <div class="loader">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+        </div>
+        <p class="success"></p>
+        <div class="divider divider--xs"> </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+</body>
+</html>
